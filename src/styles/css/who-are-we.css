@@ -1,0 +1,16 @@
+.who-are-we-section {
+  margin: 30em auto 2em auto;
+  text-align: center;
+}
+
+.who-are-we-title {
+  font-family: "Anton", sans-serif;
+  font-size: 8.5em;
+  color: rgb(169, 158, 158);
+}
+
+.who-are-we-text {
+  margin: -14em 4em 8em 4em;
+  font-size: 1.6em;
+  font-weight: bold;
+}

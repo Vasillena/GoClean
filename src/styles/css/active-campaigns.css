@@ -1,0 +1,41 @@
+.campaigns-section {
+  height: 180em;
+}
+
+.campaigns-text h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 6em;
+  color: rgb(169, 158, 158);
+  text-shadow: 1px 1px 2px rgb(117, 106, 106);
+  text-align: center;
+  padding-top: 8rem;
+  margin-bottom: 5em;
+}
+
+.campaigns-text p {
+  font-size: 2em;
+  text-align: center;
+}
+
+.all-campaigns h3 {
+  margin: 2em auto;
+  text-align: center;
+  font-size: 3em;
+}
+
+.no-campaigns img {
+  width: 30em;
+  border-radius: 50%;
+  margin: 10em auto;
+}
+
+.no-campaigns p {
+  font-size: 4em;
+  margin-top: -5.5em;
+  /* padding-bottom: 16em; */
+}
+
+.no-campaigns a {
+  color: rgb(169, 158, 158);
+  letter-spacing: 0;
+}

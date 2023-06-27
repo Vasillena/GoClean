@@ -1,0 +1,241 @@
+@media (width <= 600px) {
+  /* --------------------LAYOUT-------------------- */
+
+  #site {
+    max-width: 600px;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+  }
+
+  .hello-user {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+    border: none;
+    margin-right: 1.5em;
+  }
+
+  .fa-solid {
+    font-size: 1.1em;
+  }
+
+  .home-link {
+    margin-right: 0;
+  }
+
+  .header {
+    position: fixed;
+    top: -100%;
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
+    opacity: 0.9;
+    transition: top 0.3s ease;
+  }
+
+  .header .navbar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    padding: 1em 0;
+  }
+
+  .login-logout-link,
+  .navbar-link {
+    font-family: "Anton", sans-serif;
+    font-size: 1.4em;
+    letter-spacing: 0;
+  }
+
+  .footer-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  /* --------------------BEES MATTER-------------------- */
+
+  .title-section {
+    display: flex;
+    text-align: center;
+    flex-wrap: nowrap;
+  }
+
+  .title-section h1 {
+    position: static;
+    margin: 1em 0 7em 0;
+    font-size: 4em;
+    width: 6em;
+  }
+
+  .paragraphs-first-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin: 2em;
+  }
+
+  .paragraphs-second-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin: 2em;
+  }
+
+  /* --------------------OUR HONEY-------------------- */
+
+  .product-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .honey-jar-img {
+    margin-top: 7em;
+    margin-right: 0;
+  }
+
+  .title {
+    position: static;
+    text-align: center;
+    margin-top: 6em;
+    font-size: 1.3em;
+  }
+
+  .product-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6em;
+    gap: 5em;
+    order: 1;
+  }
+
+  .product {
+    margin-bottom: 2em;
+  }
+
+  .honey-details {
+    width: 30em;
+  }
+
+  /* --------------------ADOPT BEEHIVE-------------------- */
+
+  .adopt-beehive-title {
+    position: static;
+    font-size: 1em;
+    margin-top: 10em;
+  }
+
+  .adopt-beehive-text {
+    position: static;
+    width: 22em;
+    font-size: 1.5em;
+    margin: 20em auto 2em auto;
+  }
+
+  .adopt-beehive-text p {
+    margin-bottom: 6em;
+  }
+
+  .cards-container {
+    width: auto;
+    margin-top: 10em;
+    margin-bottom: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scale: 1.1;
+  }
+
+  .cards-container .card .face.face1 {
+    background: #ac6c1e;
+    transform: translateY(0);
+  }
+
+  .cards-container .card .face.face1 .content {
+    opacity: 1;
+  }
+
+  .cards-container .card .face.face2 {
+    transform: translateY(0);
+  }
+
+  /* --------------------ADOPTION FORM-------------------- */
+
+  .adoption-form-title {
+    font-size: 1em;
+  }
+
+  /* --------------------ABOUT US-------------------- */
+
+  .about-us-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4em 4em 10em 4em;
+  }
+
+  .about-us-text {
+    margin-top: 5.5em;
+    margin-bottom: 5.5em;
+    width: 22em;
+  }
+
+  .about-us-text p {
+    margin-top: 2em;
+    text-indent: 1em;
+  }
+
+  /* --------------------CONTACT-------------------- */
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 16em 4em;
+  }
+
+  .contact-section-form {
+    margin: 5em 0 0 0;
+  }
+
+  .sent-message {
+    width: 20em;
+    border: 1px solid grey;
+  }
+
+  /* --------------------MY BEEHIVE-------------------- */
+
+  .my-beehive-section {
+    margin: 10em 2em 4em 2em;
+  }
+
+  .my-beehive-title {
+    margin-bottom: 24em;
+    text-align: center;
+  }
+
+  .beehive-card img {
+    width: 30em;
+  }
+
+  .label {
+    scale: 0.7;
+  }
+
+  /* --------------------LOGIN-REGISTER-------------------- */
+
+  .forms {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
