@@ -24,15 +24,17 @@ export const campaignServiceFactory = (token) => {
     return result;
   };
 
-  // const edit = (campaignId, data) => request.put(`${baseUrl}/${campaignId}`, data);
+  const edit = (campaignId, data) =>
+    request.put(`${baseUrl}/${campaignId}`, data);
 
-  // const deleteCampaign = (campaignId) => request.delete(`${baseUrl}/${campaignId}`);
+  const deleteCampaign = (campaignId) =>
+    request.delete(`${baseUrl}/${campaignId}`);
 
   return {
     getAll,
     getOne,
     create,
-    // edit,
-    // delete: deleteCampaign,
+    edit,
+    delete: deleteCampaign,
   };
 };

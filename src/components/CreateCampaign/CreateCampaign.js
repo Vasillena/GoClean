@@ -31,7 +31,7 @@ export default function CreateCampaign({ onCreateCampaignSubmit }) {
         <form id="create" onSubmit={onSubmit}>
           <div className="container">
             <div className="form-elements">
-              <label htmlFor="name" />
+              <label htmlFor="username" />
               <input
                 value={values.username}
                 onChange={changeHandler}

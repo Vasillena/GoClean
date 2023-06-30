@@ -31,6 +31,7 @@ function App() {
       setCampaigns(result);
     });
   }, []);
+  // }, [campaignService]);
 
   const onCreateCampaignSubmit = async (data) => {
     const newCampaign = await campaignService.create(data);
@@ -74,6 +75,16 @@ function App() {
     setAuth({});
   };
 
+  const onCampaignEditSubmit = async (values) => {
+    const result = await campaignService.edit(values._id, values);
+
+    setCampaigns((state) =>
+      state.map((x) => (x._id === values._id ? result : x))
+    );
+
+    navigate(`/activeCampaigns/${values._id}`);
+  };
+
   const contextValues = {
     onLoginSubmit,
     onRegisterSubmit,
@@ -110,7 +121,12 @@ function App() {
               path="/activeCampaigns/:campaignId"
               element={<CampaignDetails />}
             />
-            <Route path="/editCampaign" element={<EditCampaign />} />
+            <Route
+              path="/activeCampaigns/:campaignId/editCampaign"
+              element={
+                <EditCampaign onCampaignEditSubmit={onCampaignEditSubmit} />
+              }
+            />
             <Route path="/goGreen" element={<GoGreen />} />
           </Routes>
         </main>

@@ -19,12 +19,14 @@ export default function CampaignDetails() {
   const [campaign, setCampaign] = useState({});
   const campaignService = useService(campaignServiceFactory);
   const navigate = useNavigate();
+  const { isAuthenticated } = useContext(AuthContext);
 
   useEffect(() => {
     campaignService.getOne(campaignId).then((result) => {
       setCampaign(result);
     });
   }, [campaignId]);
+  // }, [campaignId, campaignService]);
 
   const isOwner = campaign._ownerId === userId;
 
@@ -70,19 +72,18 @@ export default function CampaignDetails() {
             {isOwner && (
               <>
                 <div className="card-action-btn">
-                  <Link to={`/activeCampaigns/${campaign._id}/edit`}>EDIT</Link>
+                  <Link to={`/activeCampaigns/${campaign._id}/editCampaign`}>
+                    EDIT
+                  </Link>
                 </div>
                 <div className="card-action-btn">
-                  {/* <Link to={`/activeCampaigns/${campaign._id}/delete`}>
-                    DELETE
-                  </Link> */}
                   <button className="delete-button" onClick={onDeleteClick}>
                     DELETE
                   </button>
                 </div>
               </>
             )}
-            {!isOwner && (
+            {!isOwner && isAuthenticated && (
               <div className="card-action-btn">
                 <Link to="#">JOIN</Link>
               </div>
