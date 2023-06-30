@@ -3,8 +3,8 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
-import * as campaignService from "./services/campaignService";
-import * as authService from "./services/authService";
+import { campaignServiceFactory } from "./services/campaignService";
+import { authServiceFactory } from "./services/authService";
 import { AuthContext } from "./contexts/AuthContext";
 
 import Footer from "./components/Footer/Footer";
@@ -18,11 +18,14 @@ import Register from "./components/Register/Register";
 import EditCampaign from "./components/EditCampaign/EditCampaign";
 import CampaignDetails from "./components/CampaignDetails/CampaignDetails";
 import { Logout } from "./components/Logout/Logout";
+import { useService } from "./hooks/useService";
 
 function App() {
   const navigate = useNavigate();
   const [campaigns, setCampaigns] = useState([]);
   const [auth, setAuth] = useState({});
+  const campaignService = campaignServiceFactory(auth.accessToken);
+  const authService = authServiceFactory(auth.accessToken);
 
   useEffect(() => {
     campaignService.getAll().then((result) => {

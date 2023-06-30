@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import * as campaignService from "../../services/campaignService";
+import { useService } from "../../hooks/useService";
+import { campaignServiceFactory } from "../../services/campaignService";
 
 export default function CampaignDetails({
   _id,
@@ -14,6 +15,7 @@ export default function CampaignDetails({
 }) {
   const { campaignId } = useParams();
   const [campaign, setCampaign] = useState({});
+  const campaignService = useService(campaignServiceFactory);
 
   useEffect(() => {
     campaignService.getOne(campaignId).then((result) => {
