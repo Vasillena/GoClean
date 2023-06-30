@@ -1,4 +1,4 @@
-import { requestFactory } from "./requester.js";
+import { requestFactory } from "./requester";
 
 const baseUrl = "http://localhost:3030/data/campaigns";
 
@@ -23,9 +23,16 @@ export const campaignServiceFactory = (token) => {
 
     return result;
   };
+
+  // const edit = (campaignId, data) => request.put(`${baseUrl}/${campaignId}`, data);
+
+  // const deleteCampaign = (campaignId) => request.delete(`${baseUrl}/${campaignId}`);
+
   return {
     getAll,
     getOne,
     create,
+    // edit,
+    // delete: deleteCampaign,
   };
 };

@@ -96,3 +96,8 @@
   text-align: center;
   /* margin: 0 auto; */
 }
+
+.delete-button {
+  border: unset;
+  padding: 0;
+}

@@ -1,27 +1,40 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useService } from "../../hooks/useService";
 import { campaignServiceFactory } from "../../services/campaignService";
+import { AuthContext } from "../../contexts/AuthContext";
 
-export default function CampaignDetails({
-  _id,
-  username,
-  location,
-  date,
-  time,
-  locationUrl,
-  description,
-}) {
+export default function CampaignDetails() {
+  //   {
+  //   _id,
+  //   username,
+  //   location,
+  //   date,
+  //   time,
+  //   locationUrl,
+  //   description,
+  // }
+  const { userId } = useContext(AuthContext);
   const { campaignId } = useParams();
   const [campaign, setCampaign] = useState({});
   const campaignService = useService(campaignServiceFactory);
+  const navigate = useNavigate();
 
   useEffect(() => {
     campaignService.getOne(campaignId).then((result) => {
       setCampaign(result);
     });
   }, [campaignId]);
+
+  const isOwner = campaign._ownerId === userId;
+
+  const onDeleteClick = async () => {
+    await campaignService.delete(campaign._id);
+
+    // TODO: delete from state
+
+    navigate("/activeCampaigns");
+  };
 
   return (
     <section
@@ -54,16 +67,26 @@ export default function CampaignDetails({
             <p>{campaign.description}</p>
           </div>
           <div className="card-buttons-container">
-            <div className="card-action-btn">
-              <Link to={`/activeCampaigns/${_id}/edit`}>EDIT</Link>
-            </div>
-            <div className="card-action-btn">
-              <Link to={`/activeCampaigns/${_id}/delete`}>DELETE</Link>
-            </div>
-
-            <div className="card-action-btn">
-              <Link to="#">JOIN</Link>
-            </div>
+            {isOwner && (
+              <>
+                <div className="card-action-btn">
+                  <Link to={`/activeCampaigns/${campaign._id}/edit`}>EDIT</Link>
+                </div>
+                <div className="card-action-btn">
+                  {/* <Link to={`/activeCampaigns/${campaign._id}/delete`}>
+                    DELETE
+                  </Link> */}
+                  <button className="delete-button" onClick={onDeleteClick}>
+                    DELETE
+                  </button>
+                </div>
+              </>
+            )}
+            {!isOwner && (
+              <div className="card-action-btn">
+                <Link to="#">JOIN</Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

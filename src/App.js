@@ -17,8 +17,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import EditCampaign from "./components/EditCampaign/EditCampaign";
 import CampaignDetails from "./components/CampaignDetails/CampaignDetails";
-import { Logout } from "./components/Logout/Logout";
-import { useService } from "./hooks/useService";
+import Logout from "./components/Logout/Logout";
 
 function App() {
   const navigate = useNavigate();
@@ -70,7 +69,7 @@ function App() {
   };
 
   const onLogout = async () => {
-    // await authService.logout();
+    await authService.logout();
 
     setAuth({});
   };
