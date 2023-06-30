@@ -28,33 +28,33 @@ export default function Navigation() {
               Go Green
             </Link>
           </li>
-          {/* {isAuthenticated && (
-            <> */}
-          <li className="navbar-item">
-            <Link to="/createCampaign" className="navbar-link">
-              Create campaign
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/myCampaigns" className="navbar-link">
-              My Campaigns
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/logout" className="login-logout-link">
-              Logout
-            </Link>
-          </li>
-          {/* </>
-          )} */}
+          {isAuthenticated && (
+            <>
+              <li className="navbar-item">
+                <Link to="/createCampaign" className="navbar-link">
+                  Create campaign
+                </Link>
+              </li>
+              <li className="navbar-item">
+                <Link to="/myCampaigns" className="navbar-link">
+                  My Campaigns
+                </Link>
+              </li>
+              <li className="navbar-item">
+                <Link to="/logout" className="login-logout-link">
+                  Logout
+                </Link>
+              </li>
+            </>
+          )}
 
-          {/* {!isAuthenticated && ( */}
-          <li className="navbar-item">
-            <Link to="/login" className="login-logout-link">
-              Login
-            </Link>
-          </li>
-          {/* )} */}
+          {!isAuthenticated && (
+            <li className="navbar-item">
+              <Link to="/login" className="login-logout-link">
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </header>

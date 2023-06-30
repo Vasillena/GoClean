@@ -1,24 +1,19 @@
 import React from "react";
 import { useState } from "react";
+import { useForm } from "../../hooks/useForm";
 
 export default function CreateCampaign({ onCreateCampaignSubmit }) {
-  const [values, setValues] = useState({
-    username: "",
-    location: "",
-    date: "",
-    time: "",
-    locationUrl: "",
-    description: "",
-  });
-
-  const onChangeHandler = (e) => {
-    setValues((state) => ({ ...state, [e.target.name]: e.target.value }));
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    onCreateCampaignSubmit(values);
-  };
+  const [values, changeHandler, onSubmit] = useForm(
+    {
+      username: "",
+      location: "",
+      date: "",
+      time: "",
+      locationUrl: "",
+      description: "",
+    },
+    onCreateCampaignSubmit
+  );
 
   return (
     <section
@@ -40,7 +35,7 @@ export default function CreateCampaign({ onCreateCampaignSubmit }) {
               <label htmlFor="name" />
               <input
                 value={values.username}
-                onChange={onChangeHandler}
+                onChange={changeHandler}
                 type="text"
                 id="username"
                 name="username"
@@ -51,7 +46,7 @@ export default function CreateCampaign({ onCreateCampaignSubmit }) {
               <label htmlFor="location" />
               <input
                 value={values.location}
-                onChange={onChangeHandler}
+                onChange={changeHandler}
                 type="text"
                 id="location"
                 name="location"
@@ -62,7 +57,7 @@ export default function CreateCampaign({ onCreateCampaignSubmit }) {
               <label htmlFor="date" />
               <input
                 value={values.date}
-                onChange={onChangeHandler}
+                onChange={changeHandler}
                 type="text"
                 id="date"
                 name="date"
@@ -73,7 +68,7 @@ export default function CreateCampaign({ onCreateCampaignSubmit }) {
               <label htmlFor="time" />
               <input
                 value={values.time}
-                onChange={onChangeHandler}
+                onChange={changeHandler}
                 type="text"
                 id="time"
                 name="time"
@@ -84,7 +79,7 @@ export default function CreateCampaign({ onCreateCampaignSubmit }) {
               <label htmlFor="locationUrl" />
               <input
                 value={values.locationUrl}
-                onChange={onChangeHandler}
+                onChange={changeHandler}
                 type="text"
                 id="locationUrl"
                 name="locationUrl"
@@ -95,7 +90,7 @@ export default function CreateCampaign({ onCreateCampaignSubmit }) {
               <label htmlFor="description" />
               <textarea
                 value={values.description}
-                onChange={onChangeHandler}
+                onChange={changeHandler}
                 id="description"
                 name="description"
                 cols={50}

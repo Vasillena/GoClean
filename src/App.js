@@ -17,6 +17,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import EditCampaign from "./components/EditCampaign/EditCampaign";
 import CampaignDetails from "./components/CampaignDetails/CampaignDetails";
+import { Logout } from "./components/Logout/Logout";
 
 function App() {
   const navigate = useNavigate();
@@ -48,8 +49,33 @@ function App() {
     }
   };
 
-  const context = {
+  const onRegisterSubmit = async (values) => {
+    const { RepeatPassword, ...registerData } = values;
+    if (RepeatPassword !== registerData.Password) {
+      return;
+    }
+
+    try {
+      const result = await authService.register(registerData);
+
+      setAuth(result);
+
+      navigate("/");
+    } catch (error) {
+      console.log("Problem!");
+    }
+  };
+
+  const onLogout = async () => {
+    // await authService.logout();
+
+    setAuth({});
+  };
+
+  const contextValues = {
     onLoginSubmit,
+    onRegisterSubmit,
+    onLogout,
     userId: auth._id,
     token: auth.accessToken,
     userEmail: auth.email,
@@ -57,7 +83,7 @@ function App() {
   };
 
   return (
-    <AuthContext.Provider value={{ context }}>
+    <AuthContext.Provider value={contextValues}>
       <>
         <Navigation />
         <main className="main">
@@ -65,6 +91,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout />} />
             <Route
               path="/activeCampaigns"
               element={<ActiveCampaigns campaigns={campaigns} />}

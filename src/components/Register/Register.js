@@ -1,19 +1,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { useForm } from "../../hooks/useForm";
+import { AuthContext } from "../../contexts/AuthContext";
+
+const RegisterFormKeys = {
+  Email: "email",
+  Password: "password",
+  RepeatPassword: "repeatPassword",
+};
 
 export default function Register() {
+  const { onRegisterSubmit } = useContext(AuthContext);
+  const { values, changeHandler, onSubmit } = useForm(
+    {
+      [RegisterFormKeys.Email]: "",
+      [RegisterFormKeys.Password]: "",
+      [RegisterFormKeys.RepeatPassword]: "",
+    },
+    onRegisterSubmit
+  );
+
   return (
     <section className="register-section">
       <div className="forms">
         <div className="signup">
-          <form method="POST" id="signup">
+          <form method="POST" id="signup" onSubmit={onSubmit}>
             <h3>Sign up</h3>
-            <input type="email" name="email" placeholder="Email" />
-            <input type="password" name="password" placeholder="Password" />
+            <input
+              type="email"
+              name={RegisterFormKeys.Email}
+              placeholder="Email"
+              value={values[RegisterFormKeys.Email]}
+              onChange={changeHandler}
+            />
             <input
               type="password"
-              name="repeatPassword"
+              name={RegisterFormKeys.Password}
+              placeholder="Password"
+              value={values[RegisterFormKeys.Password]}
+              onChange={changeHandler}
+            />
+            <input
+              type="password"
+              name={RegisterFormKeys.RepeatPassword}
               placeholder="Repeat Password"
+              value={values[RegisterFormKeys.RepeatPassword]}
+              onChange={changeHandler}
             />
             <input type="submit" className="submit" defaultValue="Sign up" />
             <p>

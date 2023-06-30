@@ -38,6 +38,7 @@
 }
 
 .campaign-details-section {
+  /* height: 54em; */
   margin-top: 8em;
 }
 
@@ -93,4 +94,5 @@
   text-decoration: none;
   font-weight: bold;
   text-align: center;
+  /* margin: 0 auto; */
 }
