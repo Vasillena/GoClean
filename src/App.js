@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 import { campaignServiceFactory } from "./services/campaignService";
-import { authServiceFactory } from "./services/authService";
-import { AuthContext } from "./contexts/AuthContext";
+import { AuthProvider } from "./contexts/AuthContext";
 
 import Footer from "./components/Footer/Footer";
 import Navigation from "./components/Navigation/Navigation";
@@ -22,9 +21,8 @@ import Logout from "./components/Logout/Logout";
 function App() {
   const navigate = useNavigate();
   const [campaigns, setCampaigns] = useState([]);
-  const [auth, setAuth] = useState({});
-  const campaignService = campaignServiceFactory(auth.accessToken);
-  const authService = authServiceFactory(auth.accessToken);
+  // const campaignService = campaignServiceFactory(auth.accessToken);
+  const campaignService = campaignServiceFactory();
 
   useEffect(() => {
     campaignService.getAll().then((result) => {
@@ -41,40 +39,6 @@ function App() {
     navigate("/activeCampaigns");
   };
 
-  const onLoginSubmit = async (data) => {
-    try {
-      const result = await authService.login(data);
-      setAuth(result);
-
-      navigate("/");
-    } catch (error) {
-      console.log("Problem!");
-    }
-  };
-
-  const onRegisterSubmit = async (values) => {
-    const { RepeatPassword, ...registerData } = values;
-    if (RepeatPassword !== registerData.Password) {
-      return;
-    }
-
-    try {
-      const result = await authService.register(registerData);
-
-      setAuth(result);
-
-      navigate("/");
-    } catch (error) {
-      console.log("Problem!");
-    }
-  };
-
-  const onLogout = async () => {
-    await authService.logout();
-
-    setAuth({});
-  };
-
   const onCampaignEditSubmit = async (values) => {
     const result = await campaignService.edit(values._id, values);
 
@@ -85,18 +49,8 @@ function App() {
     navigate(`/activeCampaigns/${values._id}`);
   };
 
-  const contextValues = {
-    onLoginSubmit,
-    onRegisterSubmit,
-    onLogout,
-    userId: auth._id,
-    token: auth.accessToken,
-    userEmail: auth.email,
-    isAuthenticated: !!auth.accessToken,
-  };
-
   return (
-    <AuthContext.Provider value={contextValues}>
+    <AuthProvider>
       <>
         <Navigation />
         <main className="main">
@@ -132,7 +86,7 @@ function App() {
         </main>
         <Footer />
       </>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 
