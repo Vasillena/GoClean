@@ -14,12 +14,11 @@ export default function CampaignDetails() {
   //   locationUrl,
   //   description,
   // }
-  const { userId } = useContext(AuthContext);
+  const { userId, isAuthenticated } = useContext(AuthContext);
   const { campaignId } = useParams();
   const [campaign, setCampaign] = useState({});
   const campaignService = useService(campaignServiceFactory);
   const navigate = useNavigate();
-  const { isAuthenticated } = useContext(AuthContext);
 
   useEffect(() => {
     campaignService.getOne(campaignId).then((result) => {
