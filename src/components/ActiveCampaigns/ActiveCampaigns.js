@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCampaignContext } from "../../contexts/CampaignContext";
 import CampaignCard from "./CampaignCard/CampaignCard";
 
-export default function ActiveCampaigns({ campaigns }) {
+export default function ActiveCampaigns() {
+  const { campaigns } = useCampaignContext();
+
   return (
     <section
       className="campaigns-section"

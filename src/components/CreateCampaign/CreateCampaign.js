@@ -1,7 +1,9 @@
 import React from "react";
+import { useCampaignContext } from "../../contexts/CampaignContext";
 import { useForm } from "../../hooks/useForm";
 
-export default function CreateCampaign({ onCreateCampaignSubmit }) {
+export default function CreateCampaign() {
+  const { onCreateCampaignSubmit } = useCampaignContext();
   const { values, changeHandler, onSubmit } = useForm(
     {
       username: "",

@@ -1,12 +1,14 @@
 import React from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useCampaignContext } from "../../contexts/CampaignContext";
 
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { campaignServiceFactory } from "../../services/campaignService";
 
-export default function EditCampaign({ onCampaignEditSubmit }) {
+export default function EditCampaign() {
+  const { onCampaignEditSubmit } = useCampaignContext();
   const { campaignId } = useParams();
   const campaignService = useService(campaignServiceFactory);
   const { values, changeHandler, onSubmit, changeValues } = useForm(
