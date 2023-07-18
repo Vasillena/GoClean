@@ -23,14 +23,9 @@ export default function Logout() {
     const logout = async () => {
       try {
         await onLogout();
-        // Redirect to the login page after successful logout
-        // You can change the path as per your application's requirement
         <Navigate to="/" />;
       } catch (error) {
-        // Handle logout errors
         console.error("Logout Error:", error);
-        // Optionally, you can display an error message to the user
-        // and handle the error state accordingly
       }
     };
 

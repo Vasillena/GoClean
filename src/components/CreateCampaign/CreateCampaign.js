@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCampaignContext } from "../../contexts/CampaignContext";
 import { useForm } from "../../hooks/useForm";
 
@@ -15,6 +15,25 @@ export default function CreateCampaign() {
     },
     onCreateCampaignSubmit
   );
+
+  const [formError, setFormError] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    setFormError(null);
+    setSubmitting(true);
+
+    try {
+      await onSubmit();
+    } catch (error) {
+      setFormError(
+        "An error occurred while submitting the form. Please try again later."
+      );
+    }
+
+    setSubmitting(false);
+  };
 
   return (
     <section
@@ -103,9 +122,11 @@ export default function CreateCampaign() {
               <input
                 type="submit"
                 className="submit-button"
-                defaultValue="SEND"
+                value={submitting ? "Submitting..." : "SEND"}
+                disabled={submitting}
               />
             </div>
+            {formError && <p className="form-error">{formError}</p>}
           </div>
         </form>
       </div>

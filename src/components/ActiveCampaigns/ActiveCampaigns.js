@@ -7,6 +7,7 @@ import CampaignCard from "./CampaignCard/CampaignCard";
 export default function ActiveCampaigns() {
   const { campaigns } = useCampaignContext();
   const [searchQuery, setSearchQuery] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
@@ -15,6 +16,30 @@ export default function ActiveCampaigns() {
   const filteredCampaigns = campaigns.filter((campaign) =>
     campaign.location.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const renderCampaigns = () => {
+    if (filteredCampaigns.length > 0) {
+      return filteredCampaigns.map((x) => <CampaignCard key={x._id} {...x} />);
+    } else if (error) {
+      return (
+        <div className="error-message">
+          <p>
+            An error occurred while fetching campaigns. Please try again later.
+          </p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="no-campaigns">
+          <img src="./images/active-campaigns-2.jpg" alt="Hands" />
+          <p>
+            No available campaigns at the moment!{" "}
+            <Link to="/createCampaign">Create one...</Link>
+          </p>
+        </div>
+      );
+    }
+  };
 
   return (
     <section
@@ -66,32 +91,8 @@ export default function ActiveCampaigns() {
                 placeholder="Search location..."
               />
             </div>
-            {filteredCampaigns.length > 0 ? (
-              filteredCampaigns.map((x) => <CampaignCard key={x._id} {...x} />)
-            ) : (
-              <div className="no-campaigns">
-                <img src="./images/active-campaigns-2.jpg" alt="Hands" />
-                <p>
-                  No available campaigns at the moment!{" "}
-                  <Link to="/createCampaign">Create one...</Link>
-                </p>
-              </div>
-            )}
+            {renderCampaigns()}
           </div>
-          {/* 
-          {campaigns.map((x) => (
-            <CampaignCard key={x._id} {...x} />
-          ))}
-        </div>
-        {campaigns.length === 0 && (
-          <div className="no-campaigns">
-            <img src="./images/active-campaigns-2.jpg" alt="Hands" />
-            <p>
-              No availbale campaigns at the moment!{" "}
-              <Link to="/createCampaign">Create one...</Link>
-            </p>
-          </div>
-        )} */}
         </div>
       </div>
     </section>
