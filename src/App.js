@@ -21,6 +21,7 @@ import {
   IsNotAuthRouteGuard,
 } from "./components/common/RouteGuard";
 import CampaignOwner from "./components/common/CampaignOwner";
+import MyCampaigns from "./components/MyCampaigns/MyCampaigns";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
                     </CampaignOwner>
                   }
                 />
+                <Route path="/myCampaigns" element={<MyCampaigns />} />
                 <Route path="/logout" element={<Logout />} />
               </Route>
 

@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useService } from "../../hooks/useService";
 import { campaignServiceFactory } from "../../services/campaignService";
 import { AuthContext } from "../../contexts/AuthContext";
+import { useCampaignContext } from "../../contexts/CampaignContext";
 
 export default function CampaignDetails() {
   //   {
@@ -18,6 +19,7 @@ export default function CampaignDetails() {
   const { campaignId } = useParams();
   const [campaign, setCampaign] = useState({});
   const campaignService = useService(campaignServiceFactory);
+  const { deleteCampaign } = useCampaignContext();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,11 +32,18 @@ export default function CampaignDetails() {
   const isOwner = campaign._ownerId === userId;
 
   const onDeleteClick = async () => {
-    await campaignService.delete(campaign._id);
+    // eslint-disable-next-line no-restricted-globals
+    const result = confirm(
+      "You are about to delete current campaign! Proceed?"
+    );
 
-    // TODO: delete from state
+    if (result) {
+      await campaignService.delete(campaign._id);
 
-    navigate("/activeCampaigns");
+      deleteCampaign(campaign._id);
+
+      navigate("/activeCampaigns");
+    }
   };
 
   return (
