@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCampaignContext } from "../../contexts/CampaignContext";
 import CampaignCard from "./CampaignCard/CampaignCard";
@@ -6,6 +6,15 @@ import CampaignCard from "./CampaignCard/CampaignCard";
 
 export default function ActiveCampaigns() {
   const { campaigns } = useCampaignContext();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredCampaigns = campaigns.filter((campaign) =>
+    campaign.location.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <section
@@ -44,6 +53,32 @@ export default function ActiveCampaigns() {
         </p>
         <div className="all-campaigns">
           <h3>Active Campaigns</h3>
+
+          <div className="search">
+            <div className="search-element">
+              <label htmlFor="search" />
+              <input
+                value={searchQuery}
+                onChange={handleSearch}
+                type="text"
+                id="search"
+                name="search"
+                placeholder="Search location..."
+              />
+            </div>
+            {filteredCampaigns.length > 0 ? (
+              filteredCampaigns.map((x) => <CampaignCard key={x._id} {...x} />)
+            ) : (
+              <div className="no-campaigns">
+                <img src="./images/active-campaigns-2.jpg" alt="Hands" />
+                <p>
+                  No available campaigns at the moment!{" "}
+                  <Link to="/createCampaign">Create one...</Link>
+                </p>
+              </div>
+            )}
+          </div>
+          {/* 
           {campaigns.map((x) => (
             <CampaignCard key={x._id} {...x} />
           ))}
@@ -56,7 +91,8 @@ export default function ActiveCampaigns() {
               <Link to="/createCampaign">Create one...</Link>
             </p>
           </div>
-        )}
+        )} */}
+        </div>
       </div>
     </section>
   );
