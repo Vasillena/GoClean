@@ -8,13 +8,12 @@ export default function MyCampaigns() {
   const { campaigns } = useCampaignContext();
   const { userId } = useContext(AuthContext);
 
-  // Filter the campaigns where you are the owner
   const ownerCampaigns = campaigns.filter(
     (campaign) => campaign._ownerId === userId
   );
 
   return (
-    <div className="all-campaigns">
+    <div className="my-campaigns">
       <h3>My Campaigns</h3>
       {ownerCampaigns.length > 0 ? (
         ownerCampaigns.map((x) => <CampaignCard key={x._id} {...x} />)
@@ -22,7 +21,9 @@ export default function MyCampaigns() {
         <div className="no-campaigns">
           <img src="./images/active-campaigns-2.jpg" alt="Hands" />
           <p>
-            No available campaigns at the moment!{" "}
+            {ownerCampaigns.length === 0
+              ? "No available campaigns at the moment!"
+              : "An error occurred while fetching campaigns. Please try again later."}{" "}
             <Link to="/createCampaign">Create one...</Link>
           </p>
         </div>
