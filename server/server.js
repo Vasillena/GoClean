@@ -1445,7 +1445,7 @@
         location: "Central Park",
         date: "01.01.2023",
         time: "12:00",
-        locationUrl: "/images/create-campaign.jpg",
+        locationUrl: "/images/example.jpeg",
         description: "Let's gather and return the park it's charm.",
         _createdOn: 1617194128618,
       },

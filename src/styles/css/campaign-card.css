@@ -97,7 +97,8 @@
   /* margin: 0 auto; */
 }
 
-.delete-button {
+.delete-button,
+.join-button {
   border: unset;
   padding: 0;
 }

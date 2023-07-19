@@ -9,6 +9,18 @@ export default function CampaignProvider({ children }) {
   const navigate = useNavigate();
   const [campaigns, setCampaigns] = useState([]);
   const campaignService = campaignServiceFactory();
+  //   const [joinedUsers, setJoinedUsers] = useState({});
+  const [joinedUsers, setJoinedUsers] = useState(() => {
+    const storedJoinedUsers = localStorage.getItem("joinedUsers");
+    return storedJoinedUsers ? JSON.parse(storedJoinedUsers) : {};
+  });
+
+  const joinCampaign = (campaignId, userId) => {
+    setJoinedUsers((prevJoinedUsers) => ({
+      ...prevJoinedUsers,
+      [campaignId]: [...(prevJoinedUsers[campaignId] || []), userId],
+    }));
+  };
 
   useEffect(() => {
     campaignService.getAll().then((result) => {
@@ -16,6 +28,10 @@ export default function CampaignProvider({ children }) {
     });
   }, []);
   // }, [campaignService]);
+
+  useEffect(() => {
+    localStorage.setItem("joinedUsers", JSON.stringify(joinedUsers));
+  }, [joinedUsers]);
 
   const onCreateCampaignSubmit = async (data) => {
     const newCampaign = await campaignService.create(data);
@@ -51,6 +67,8 @@ export default function CampaignProvider({ children }) {
     onCampaignEditSubmit,
     deleteCampaign,
     getCampaign,
+    joinCampaign,
+    joinedUsers,
   };
 
   return (

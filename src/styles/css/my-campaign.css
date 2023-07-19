@@ -2,11 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1em;
+  margin-top: 0.2em;
+  margin-bottom: 2em;
 }
 
-.my-campaigns h3 {
-  font-size: 3em;
+.my-campaigns .card-container {
+  margin-top: 6em;
 }
 
 .my-campaigns .card-date,

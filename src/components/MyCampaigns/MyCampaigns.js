@@ -13,8 +13,16 @@ export default function MyCampaigns() {
   );
 
   return (
-    <div className="my-campaigns">
-      <h3>My Campaigns</h3>
+    <section
+      className="my-campaigns"
+      style={{
+        background: "url(/images/my-campaigns.png)",
+        backgroundSize: "70% auto",
+        backgroundPosition: "25em 0",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* <h3>My Campaigns</h3> */}
       {ownerCampaigns.length > 0 ? (
         ownerCampaigns.map((x) => <CampaignCard key={x._id} {...x} />)
       ) : (
@@ -28,6 +36,6 @@ export default function MyCampaigns() {
           </p>
         </div>
       )}
-    </div>
+    </section>
   );
 }

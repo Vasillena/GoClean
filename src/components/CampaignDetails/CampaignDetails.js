@@ -12,6 +12,7 @@ export default function CampaignDetails() {
   const campaignService = useService(campaignServiceFactory);
   const { deleteCampaign } = useCampaignContext();
   const navigate = useNavigate();
+  const { joinedUsers, joinCampaign } = useCampaignContext();
 
   useEffect(() => {
     campaignService.getOne(campaignId).then((result) => {
@@ -34,6 +35,14 @@ export default function CampaignDetails() {
       deleteCampaign(campaign._id);
 
       navigate("/activeCampaigns");
+    }
+  };
+
+  const onJoinClick = () => {
+    // Check if the user has not already joined the campaign
+    if (!joinedUsers[campaignId]?.includes(userId)) {
+      // Join the campaign by calling the joinCampaign function from the context
+      joinCampaign(campaignId, userId);
     }
   };
 
@@ -76,9 +85,17 @@ export default function CampaignDetails() {
             )}
             {!isOwner && isAuthenticated && (
               <>
-                <p className="counter">Total joined: </p>
+                <p className="counter">
+                  Total joined: {joinedUsers[campaignId]?.length || 0}
+                </p>
                 <div className="card-action-btn">
-                  <Link to="#">JOIN</Link>
+                  <button
+                    className="join-button"
+                    onClick={onJoinClick}
+                    disabled={joinedUsers[campaignId]?.includes(userId)}
+                  >
+                    JOIN
+                  </button>
                 </div>
               </>
             )}
