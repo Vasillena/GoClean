@@ -65,6 +65,7 @@ export default function EditCampaign() {
                   placeholder="Name"
                   value={values.username}
                   onChange={changeHandler}
+                  required
                 />
               </div>
               <div className="form-elements">
@@ -76,6 +77,7 @@ export default function EditCampaign() {
                   placeholder="Location"
                   value={values.location}
                   onChange={changeHandler}
+                  required
                 />
               </div>
               <div className="form-elements">
@@ -87,6 +89,7 @@ export default function EditCampaign() {
                   placeholder="Date"
                   value={values.date}
                   onChange={changeHandler}
+                  required
                 />
               </div>
               <div className="form-elements">
@@ -98,6 +101,7 @@ export default function EditCampaign() {
                   placeholder="Time"
                   value={values.time}
                   onChange={changeHandler}
+                  required
                 />
               </div>
               <div className="form-elements">
@@ -109,6 +113,7 @@ export default function EditCampaign() {
                   placeholder="Location image URL"
                   value={values.locationUrl}
                   onChange={changeHandler}
+                  required
                 />
               </div>
               <div className="form-elements">
@@ -121,6 +126,7 @@ export default function EditCampaign() {
                   placeholder="Tell us more about your campaign"
                   value={values.description}
                   onChange={changeHandler}
+                  required
                 />
               </div>
               <div className="form-elements">

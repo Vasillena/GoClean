@@ -35,6 +35,7 @@ export default function Register() {
               placeholder="Email"
               value={values[RegisterFormKeys.Email]}
               onChange={changeHandler}
+              required
             />
             <input
               type="password"
@@ -42,6 +43,7 @@ export default function Register() {
               placeholder="Password"
               value={values[RegisterFormKeys.Password]}
               onChange={changeHandler}
+              required
             />
             <input
               type="password"
@@ -49,6 +51,7 @@ export default function Register() {
               placeholder="Repeat Password"
               value={values[RegisterFormKeys.RepeatPassword]}
               onChange={changeHandler}
+              required
             />
             <input type="submit" className="submit" defaultValue="Sign up" />
             <p>

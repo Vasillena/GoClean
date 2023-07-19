@@ -33,6 +33,7 @@ export default function Login() {
               placeholder="Email"
               value={values[LoginFormKeys.Email]}
               onChange={changeHandler}
+              required
             />
             <input
               type="password"
@@ -40,6 +41,7 @@ export default function Login() {
               placeholder="Password"
               value={values[LoginFormKeys.Password]}
               onChange={changeHandler}
+              required
             />
             <input type="submit" className="submit" defaultValue="Login" />
             <p>

@@ -60,6 +60,7 @@ export default function CreateCampaign() {
                 id="username"
                 name="username"
                 placeholder="Name"
+                required
               />
             </div>
             <div className="form-elements">
@@ -71,6 +72,7 @@ export default function CreateCampaign() {
                 id="location"
                 name="location"
                 placeholder="Location"
+                required
               />
             </div>
             <div className="form-elements">
@@ -82,6 +84,7 @@ export default function CreateCampaign() {
                 id="date"
                 name="date"
                 placeholder="Date"
+                required
               />
             </div>
             <div className="form-elements">
@@ -93,6 +96,7 @@ export default function CreateCampaign() {
                 id="time"
                 name="time"
                 placeholder="Time"
+                required
               />
             </div>
             <div className="form-elements">
@@ -104,6 +108,7 @@ export default function CreateCampaign() {
                 id="locationUrl"
                 name="locationUrl"
                 placeholder="Location image URL"
+                required
               />
             </div>
             <div className="form-elements">
@@ -116,6 +121,7 @@ export default function CreateCampaign() {
                 cols={50}
                 rows={2}
                 placeholder="Tell us more about your campaign"
+                required
               />
             </div>
             <div className="form-elements">
