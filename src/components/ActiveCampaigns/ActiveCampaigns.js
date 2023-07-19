@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCampaignContext } from "../../contexts/CampaignContext";
 import CampaignCard from "./CampaignCard/CampaignCard";
-// import MyCampaigns from "../MyCampaigns/MyCampaigns"
 
 export default function ActiveCampaigns() {
   const { campaigns } = useCampaignContext();

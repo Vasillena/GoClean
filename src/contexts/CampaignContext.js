@@ -27,7 +27,6 @@ export default function CampaignProvider({ children }) {
       setCampaigns(result);
     });
   }, []);
-  // }, [campaignService]);
 
   useEffect(() => {
     localStorage.setItem("joinedUsers", JSON.stringify(joinedUsers));

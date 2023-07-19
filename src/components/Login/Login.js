@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -12,7 +11,6 @@ const LoginFormKeys = {
 
 export default function Login() {
   const { onLoginSubmit } = useContext(AuthContext);
-  // const { onLoginSubmit } = useAuthContext;
   const { values, changeHandler, onSubmit } = useForm(
     {
       [LoginFormKeys.Email]: "",

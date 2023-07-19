@@ -8,6 +8,7 @@
 
 .my-campaigns .card-container {
   margin-top: 6em;
+  animation: sliderReveal 1s ease forwards;
 }
 
 .my-campaigns .card-date,

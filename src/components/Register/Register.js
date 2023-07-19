@@ -1,9 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { useForm } from "../../hooks/useForm";
 import { AuthContext } from "../../contexts/AuthContext";
-// import { useAuthContext } from "../../contexts/AuthContext";
 
 const RegisterFormKeys = {
   Email: "email",

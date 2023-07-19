@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useService } from "../../hooks/useService";
 import { campaignServiceFactory } from "../../services/campaignService";
@@ -19,7 +19,6 @@ export default function CampaignDetails() {
       setCampaign(result);
     });
   }, [campaignId]);
-  // }, [campaignId, campaignService]);
 
   const isOwner = campaign._ownerId === userId;
 
@@ -39,9 +38,7 @@ export default function CampaignDetails() {
   };
 
   const onJoinClick = () => {
-    // Check if the user has not already joined the campaign
     if (!joinedUsers[campaignId]?.includes(userId)) {
-      // Join the campaign by calling the joinCampaign function from the context
       joinCampaign(campaignId, userId);
     }
   };

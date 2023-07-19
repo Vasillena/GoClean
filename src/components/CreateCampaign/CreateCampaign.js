@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useCampaignContext } from "../../contexts/CampaignContext";
 import { useForm } from "../../hooks/useForm";
 

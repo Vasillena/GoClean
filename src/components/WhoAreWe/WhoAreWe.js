@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function WhoAreWe() {
   return (
     <section className="who-are-we-section">

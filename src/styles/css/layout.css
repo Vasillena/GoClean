@@ -4,10 +4,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* background: url(../../../public/images/hero-nature-4.jpg);
-  background-size: 90% auto;
-  background-position: center 0;
-  background-repeat: no-repeat; */
 }
 
 .menu-button {
