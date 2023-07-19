@@ -6,15 +6,6 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { useCampaignContext } from "../../contexts/CampaignContext";
 
 export default function CampaignDetails() {
-  //   {
-  //   _id,
-  //   username,
-  //   location,
-  //   date,
-  //   time,
-  //   locationUrl,
-  //   description,
-  // }
   const { userId, isAuthenticated } = useContext(AuthContext);
   const { campaignId } = useParams();
   const [campaign, setCampaign] = useState({});
@@ -47,15 +38,7 @@ export default function CampaignDetails() {
   };
 
   return (
-    <section
-      className="campaign-details-section"
-      // style={{
-      //   background: "url(/images/campaign-details.jpg)",
-      //   backgroundSize: "90% auto",
-      //   backgroundPosition: "center 0",
-      //   backgroundRepeat: "no-repeat",
-      // }}
-    >
+    <section className="campaign-details-section">
       <div className="card-details-container">
         <div className="details-img-container">
           <img src={campaign.locationUrl} alt="Location img" />
@@ -92,9 +75,12 @@ export default function CampaignDetails() {
               </>
             )}
             {!isOwner && isAuthenticated && (
-              <div className="card-action-btn">
-                <Link to="#">JOIN</Link>
-              </div>
+              <>
+                <p className="counter">Total joined: </p>
+                <div className="card-action-btn">
+                  <Link to="#">JOIN</Link>
+                </div>
+              </>
             )}
           </div>
         </div>
