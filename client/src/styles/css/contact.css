@@ -1,0 +1,29 @@
+.contact-section {
+  /* margin: 16em 10em 0 10em; */
+  margin-top: 16em;
+  padding-bottom: 20em;
+}
+
+.contact-container {
+  width: 100em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-text {
+  width: 14em;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.contact-text h2 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.form-elements input,
+.form-elements textarea {
+  width: 14em;
+}

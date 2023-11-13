@@ -1,0 +1,114 @@
+#site {
+  max-width: 1800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-button {
+  display: none;
+}
+
+/* .home-link img {
+  width: 2.5em;
+  height: auto;
+} */
+
+.blur-background {
+  -webkit-backdrop-filter: blur(10px);
+}
+
+header {
+  margin-top: -10em;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+}
+
+.header {
+  padding: 2em 0;
+}
+
+.header .navbar-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.4em 2em;
+}
+
+.navbar-item:hover {
+  transform: translateY(-0.2em);
+}
+
+.hero-title-section {
+  height: 22em;
+  margin: 0.2em auto;
+  padding: 30em 0;
+  text-align: center;
+  /* color: white; */
+  color: rgb(135, 135, 135);
+}
+
+.hero-title-section h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 10em;
+  animation: sliderReveal 1s ease forwards;
+}
+
+.hero-title-section p {
+  font-size: 2em;
+  margin: 0 6em;
+  /* font-weight: bold; */
+  opacity: 0;
+  animation: sliderReveal 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.footer {
+  /* position: relative; */
+  /* margin-top: auto; */
+  margin-top: -3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(135, 135, 135);
+  /* background-color: rgb(142, 132, 132); */
+}
+
+/* .footer a {
+  font-family: Raleway, sans-serif;
+} */
+
+.footer-list {
+  display: flex;
+  gap: 20em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+}
+
+.footer-list li:hover {
+  transform: translateY(-0.2em);
+}
+
+/* .footer-bottom {
+  font-family: Raleway, sans-serif;
+  font-size: 1em;
+} */
+
+.github-link {
+  color: wheat;
+  font-weight: bold;
+}
+
+/* .navbar-item-thank-you {
+  display: none;
+} */

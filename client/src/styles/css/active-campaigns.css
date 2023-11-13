@@ -1,0 +1,70 @@
+.campaigns-section {
+  min-height: 100em;
+}
+
+.campaigns-text {
+  margin: 2em;
+}
+
+.campaigns-text h1 {
+  width: 12em;
+  text-align: center;
+  padding-top: 12rem;
+  padding-left: 2em;
+  margin-bottom: 3em;
+  /* margin: 2em; */
+  font-size: 4em;
+  font-weight: 100;
+  animation: sliderReveal 1s ease forwards;
+}
+
+.campaigns-text p {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 2em;
+  text-align: center;
+  opacity: 0;
+  animation: sliderReveal 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.all-campaigns h3 {
+  margin: 2em auto 0.5em auto;
+  text-align: center;
+  font-size: 3em;
+}
+
+.no-campaigns {
+  margin: 2em auto;
+}
+
+.no-campaigns a {
+  color: rgb(169, 158, 158);
+  letter-spacing: 0;
+}
+
+.search {
+  text-align: center;
+}
+
+.search-element ::placeholder {
+  color: gray;
+  text-shadow: none;
+}
+
+.search-element input {
+  border: 1px solid lightgray;
+  border-radius: 0.5em;
+  padding: 0.2em;
+  color: black;
+  width: 10em;
+}
+
+.active-campaigns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90em;
+  margin: 0 auto;
+  padding-bottom: 10em;
+}

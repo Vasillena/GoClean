@@ -1,0 +1,34 @@
+.my-campaigns {
+  min-height: 60em;
+  display: flex;
+  margin: 0 auto;
+  padding: 16em 6em;
+}
+
+.my-campaigns-cards,
+.saved-campaigns-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 30em;
+  margin: 0 auto;
+  animation: sliderReveal 1s ease forwards;
+  /* border: 1px solid darkgray; */
+}
+
+.my-campaigns .card-date,
+.my-campaigns .card-time,
+.my-campaigns .card-location {
+  font-size: 2em;
+  text-align: center;
+}
+
+.no-campaigns {
+  font-size: 1.5em;
+}

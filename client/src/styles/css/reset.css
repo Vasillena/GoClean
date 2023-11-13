@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: rgb(75, 75, 75);
+  /* color: red; */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: rgb(229, 228, 228);
+}
+
+body {
+  background-color: white;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  /* text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9em; */
+}
+
+/* button {
+  all: unset;
+  padding: 0.3em;
+  border-bottom: 2px solid white;
+  cursor: pointer;
+} */
+
+input,
+textarea,
+button {
+  all: unset;
+  text-align: center;
+  /* width: 14em; */
+  /* color: white; */
+  font-size: 1.5em;
+  /* background-color: white; */
+  border: 1px solid rgb(75, 75, 75);
+  margin: 0.2em;
+  /* border-bottom: 2px solid rgb(75, 75, 75); */
+  cursor: pointer;
+}
+
+::placeholder {
+  color: rgb(75, 75, 75);
+  /* color: white; */
+  /* text-shadow: 1px 1px 2px rgb(117, 106, 106); */
+}
+
+.submit-button {
+  width: 6em;
+  /* color: white;
+  text-shadow: 1px 1px 2px rgb(117, 106, 106); */
+  cursor: pointer;
+}

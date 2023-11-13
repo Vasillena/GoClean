@@ -1,0 +1,65 @@
+.who-are-we-section {
+  margin: 12em auto 2em auto;
+  text-align: center;
+}
+
+.who-are-we-title {
+  font-family: "Anton", sans-serif;
+  font-size: 8.5em;
+  /* color: rgb(73, 239, 187); */
+  /* text-shadow: rgb(94, 94, 94) 1px 0 6px; */
+  text-shadow: 0.5px 0.5px 1px rgb(117, 106, 106);
+}
+
+.who-are-we-title h2 {
+  color: rgb(73, 239, 187);
+}
+
+.who-are-we-text {
+  position: relative;
+  margin: -14em 4em 8em 4em;
+  font-size: 1.6em;
+  font-weight: 500;
+  /* display: none; */
+}
+
+.middle-img img {
+  width: 30em;
+  margin: 0 auto;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: grow;
+}
+
+/* .middle-img {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: grow;
+} */
+
+/* @keyframes grow {
+  from {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(0.6);
+  }
+
+  to {
+    transform: scale(0.5);
+  }
+} */
+
+@keyframes grow {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

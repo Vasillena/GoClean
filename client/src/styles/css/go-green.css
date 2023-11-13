@@ -1,0 +1,86 @@
+.go-green-section {
+  margin-top: 8em;
+}
+
+.go-green-text h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 6em;
+  color: white;
+  padding: 0 0.2em;
+}
+
+/* .go-green-text span {
+  color: white;
+} */
+
+.go-green-text p {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  width: 10em;
+}
+
+.go-green-text p:nth-of-type(1) {
+  margin-top: -3em;
+  margin-left: 27.5em;
+}
+
+.go-green-text p:nth-of-type(2) {
+  margin-top: 2.5em;
+  margin-left: 41em;
+}
+
+.go-green-text p:nth-of-type(3) {
+  margin-top: 2.5em;
+  margin-left: 1em;
+}
+
+.go-green-text p:nth-of-type(4) {
+  margin-top: -3.5em;
+  margin-left: 20em;
+  font-size: 3em;
+  width: 12em;
+}
+
+.go-green-text p:nth-of-type(5) {
+  margin-top: -5em;
+  margin-left: 14.5em;
+}
+
+.go-green-text p:nth-of-type(6) {
+  margin-top: 2em;
+  margin-left: 1.5em;
+}
+
+.go-green-text p:nth-of-type(7) {
+  margin-top: 2.5em;
+  margin-left: 14.3em;
+}
+
+.go-green-text p:nth-of-type(8) {
+  margin-top: 3em;
+  margin-left: 27.5em;
+}
+
+.go-green-text p:nth-of-type(9) {
+  margin-top: -4em;
+  margin-left: 2em;
+  font-size: 3em;
+  width: 12em;
+}
+
+.go-green-text p:nth-of-type(10) {
+  margin-top: -4.5em;
+  margin-left: 41em;
+}
+
+.who-are-we-bottom h2 {
+  font-size: 4em;
+  text-align: center;
+  font-weight: bold;
+  margin: 1em auto;
+}
+
+.who-are-we-bottom span {
+  color: green;
+}

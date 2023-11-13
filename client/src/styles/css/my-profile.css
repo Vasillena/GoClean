@@ -1,0 +1,26 @@
+.my-profile-section {
+  margin: 0 6em;
+}
+
+.my-profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.user-img img {
+  width: 14em;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10em;
+}
+
+.user-name {
+  font-size: 1.8em;
+}
+
+.user-total-campaigns {
+  font-size: 1.2em;
+}

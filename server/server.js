@@ -103,7 +103,8 @@
       // NOTE: the OPTIONS method results in undefined result and also it never processes plugins - keep this in mind
       if (method == "OPTIONS") {
         Object.assign(headers, {
-          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Methods":
+            "GET, POST, PUT, DELETE, OPTIONS, PATCH",
           "Access-Control-Allow-Credentials": false,
           "Access-Control-Max-Age": "86400",
           "Access-Control-Allow-Headers":
@@ -563,6 +564,7 @@
     let responseData;
 
     try {
+      console.log(query.where);
       if (query.where) {
         responseData = context.storage
           .get(context.params.collection)
@@ -826,7 +828,8 @@
     index:
       mode == "prod"
         ? require$$0
-        : fs__default["default"].readFileSync("./client/index.html", "utf-8"),
+        : // : fs__default["default"].readFileSync("./client/index.html", "utf-8"),
+          fs__default["default"].readFileSync("/index.html", "utf-8"),
   };
 
   var admin = (method, tokens, query, body) => {
@@ -1426,13 +1429,21 @@
     users: {
       "35c62d76-8152-4626-8712-eeb96381bea8": {
         email: "peter@abv.bg",
+        username: "Peter",
         hashedPassword:
           "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
       },
       "847ec027-f659-4086-8032-5173e2f9c93a": {
-        email: "john@abv.bg",
+        email: "george@abv.bg",
+        username: "George",
         hashedPassword:
           "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
+      },
+      "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
+        email: "admin@abv.bg",
+        username: "Admin",
+        hashedPassword:
+          "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302",
       },
     },
     sessions: {},
@@ -1443,16 +1454,113 @@
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
         username: "Lena",
         location: "Central Park",
-        date: "01.01.2023",
+        date: "05.05.2024",
         time: "12:00",
         locationUrl: "/images/example.jpeg",
-        description: "Let's gather and return the park it's charm.",
+        description:
+          " One of my favourite places in this town. It really bothers me seeing it in this condition. I'm sure many feel that way.So let's gather and return the park it's charm.",
+        _createdOn: 1617194128611,
+      },
+      "ff436770-76c5-40e2-b231-77409eda7a62": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        username: "Lena",
+        location: "Central Park",
+        date: "05.05.2024",
+        time: "12:00",
+        locationUrl: "/images/example.jpeg",
+        description:
+          " One of my favourite places in this town. It really bothers me seeing it in this condition. I'm sure many feel that way.So let's gather and return the park it's charm.",
+        _createdOn: 1617194128612,
+      },
+      "ff436770-76c5-40e2-b231-77409eda7a63": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        username: "Lena",
+        location: "Central Park",
+        date: "05.05.2024",
+        time: "12:00",
+        locationUrl: "/images/example.jpeg",
+        description:
+          " One of my favourite places in this town. It really bothers me seeing it in this condition. I'm sure many feel that way.So let's gather and return the park it's charm.",
+        _createdOn: 1617194128613,
+      },
+      "ff436770-76c5-40e2-b231-77409eda7a64": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        username: "Lena",
+        location: "Central Park",
+        date: "05.05.2024",
+        time: "12:00",
+        locationUrl: "/images/example.jpeg",
+        description:
+          " One of my favourite places in this town. It really bothers me seeing it in this condition. I'm sure many feel that way.So let's gather and return the park it's charm.",
+        _createdOn: 1617194128614,
+      },
+      "ff436770-76c5-40e2-b231-77409eda7a65": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        username: "Lena",
+        location: "Central Park",
+        date: "05.05.2024",
+        time: "12:00",
+        locationUrl: "/images/example.jpeg",
+        description:
+          " One of my favourite places in this town. It really bothers me seeing it in this condition. I'm sure many feel that way.So let's gather and return the park it's charm.",
+        _createdOn: 1617194128615,
+      },
+      "ff436770-76c5-40e2-b231-77409eda7a66": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        username: "Lena",
+        location: "Central Park",
+        date: "05.05.2024",
+        time: "12:00",
+        locationUrl: "/images/example.jpeg",
+        description:
+          " One of my favourite places in this town. It really bothers me seeing it in this condition. I'm sure many feel that way.So let's gather and return the park it's charm.",
+        _createdOn: 1617194128616,
+      },
+      "ff436770-76c5-40e2-b231-77409eda7a67": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        username: "Lena",
+        location: "Central Park",
+        date: "05.05.2024",
+        time: "12:00",
+        locationUrl: "/images/example.jpeg",
+        description:
+          " One of my favourite places in this town. It really bothers me seeing it in this condition. I'm sure many feel that way.So let's gather and return the park it's charm.",
+        _createdOn: 1617194128617,
+      },
+      "ff436770-76c5-40e2-b231-77409eda7a68": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        username: "Lena",
+        location: "Central Park",
+        date: "05.05.2024",
+        time: "12:00",
+        locationUrl: "/images/example.jpeg",
+        description:
+          " One of my favourite places in this town. It really bothers me seeing it in this condition. I'm sure many feel that way.So let's gather and return the park it's charm.",
         _createdOn: 1617194128618,
       },
+      "ff436770-76c5-40e2-b231-77409eda7a69": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        username: "Lena",
+        location: "Central Park",
+        date: "05.05.2024",
+        time: "12:00",
+        locationUrl: "/images/example.jpeg",
+        description:
+          " One of my favourite places in this town. It really bothers me seeing it in this condition. I'm sure many feel that way.So let's gather and return the park it's charm.",
+        _createdOn: 1617194128619,
+      },
+      "ff436770-76c5-40e2-b231-77409eda7a60": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        username: "Lena",
+        location: "Central Park",
+        date: "05.05.2024",
+        time: "12:00",
+        locationUrl: "/images/example.jpeg",
+        description:
+          " One of my favourite places in this town. It really bothers me seeing it in this condition. I'm sure many feel that way.So let's gather and return the park it's charm.",
+        _createdOn: 1617194128610,
+      },
     },
-    // comments: {
-
-    // }
   };
   var rules$1 = {
     users: {
