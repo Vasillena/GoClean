@@ -62,11 +62,6 @@ export default function Contact() {
                 />
               </div>
               <div className="form-elements">
-                {/* <input
-                  type="submit"
-                  className="submit-button"
-                  defaultValue="SEND"
-                /> */}
                 <button type="submit" className="submit-button">
                   SEND
                 </button>

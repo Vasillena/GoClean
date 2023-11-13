@@ -58,7 +58,6 @@ useEffect(() => {
     const newIsSaved = !isSaved;
     setIsSaved(newIsSaved);
 
-    // Save the status in localStorage
     localStorage.setItem(`saved_${campaign._id}`, newIsSaved);
   }
 
@@ -68,7 +67,7 @@ useEffect(() => {
       className="campaign-details-section"
       style={{
         background: "url(/images/active-campaigns.svg)",
-        backgroundSize: "90% auto",
+        backgroundSize: "100% auto",
         backgroundPosition: "center 0",
         backgroundRepeat: "no-repeat",
       }}

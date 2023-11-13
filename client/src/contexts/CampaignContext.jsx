@@ -22,8 +22,6 @@ export default function CampaignProvider({ children }) {
     }));
   };
 
-    // const [isSaved, setIsSaved] = useState(localStorage.getItem(`saved_${campaign._id}`) === "true");
-
   useEffect(() => {
     campaignService.getAll().then((result) => {
       setCampaigns(result);

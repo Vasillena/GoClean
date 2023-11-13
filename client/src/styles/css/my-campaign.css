@@ -19,7 +19,6 @@
   width: 30em;
   margin: 0 auto;
   animation: sliderReveal 1s ease forwards;
-  /* border: 1px solid darkgray; */
 }
 
 .my-campaigns .card-date,

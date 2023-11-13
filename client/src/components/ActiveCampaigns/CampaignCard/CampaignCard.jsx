@@ -23,9 +23,6 @@ export default function CampaignCard({
           <div className="card-time">
             <p>{time}</p>
           </div>
-          {/* <div className="card-details">
-            <Link to={`/activeCampaigns/${_id}`}>Learn more</Link>
-          </div> */}
         </div>
       </div>
     </Link>

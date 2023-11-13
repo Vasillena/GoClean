@@ -3,7 +3,6 @@
   justify-content: center;
   margin: 3em auto 0 auto;
   padding: 0.5em;
-  /* margin: 0; */
 }
 
 .card-container:hover {
@@ -20,20 +19,8 @@
   font-size: 0.8em;
 }
 
-/* .content-container {
-  width: 240px;
-  height: 220px;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 4px 4px 5px #333;
-  padding: 3em 0 2em 4em;
-  border-radius: 0.2em;
-  font-size: 0.8em;
-  backdrop-filter: blur(10px);
-} */
-
 .content-container:hover {
   background-color: white;
-  /* background-color: rgba(255, 255, 255, 0.58); */
   transition: background-color 0.5s ease;
 }
 
@@ -44,32 +31,9 @@
   aspect-ratio: 1;
   border-radius: 0.2em;
   margin-top: 1.8em;
-  /* margin-right: -6em; */
   margin-right: -4em;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 100;
 }
-
-/* .card-details {
-  background-image: linear-gradient(147deg, #dafe39 0%, #38fda4 74%);
-  width: 8em;
-  padding: 0.3em;
-  border-radius: 3em;
-  color: white;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-  text-decoration: none;
-  font-weight: bold;
-  text-align: center;
-  margin: 0.5em auto;
-} */
-/* 
-.card-details {
-  text-align: center;
-  width: 10em;
-  background-color: white;
-  border: 1px solid rgb(75, 75, 75);
-  margin: 0.5em auto;
-} */
 
 .campaign-details-section {
   min-height: 70em;
@@ -89,12 +53,7 @@
 .details-content-container {
   display: flex;
   flex-direction: column;
-  /* width: 800px;
-  height: 30em; */
   padding: 4em;
-  /* background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0.2em; */
   text-align: center;
 }
 
@@ -104,7 +63,6 @@
   height: auto;
   aspect-ratio: 3/4;
   border-radius: 0.2em;
-  /* margin-bottom: -6em; */
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -135,7 +93,6 @@
 .card-action-btn {
   background-image: linear-gradient(147deg, #dafe39 0%, #38fda4 74%);
   width: 10em;
-  /* padding: 0.5em 2em; */
   border-radius: 3em;
   color: white;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);

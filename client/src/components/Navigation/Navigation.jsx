@@ -57,9 +57,6 @@ export default function Navigation() {
                   Logout
                 </Link>
               </li>
-              {/* <li className="navbar-item-thank-you">
-                <Link to="/thankYou" className="thank-you-link"></Link>
-              </li> */}
             </>
           )}
 
