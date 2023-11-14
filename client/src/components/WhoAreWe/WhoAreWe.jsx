@@ -24,6 +24,32 @@ export default function WhoAreWe() {
           cleaner, healthier, and more sustainable world.
         </p>
       </div>
+      <div className="who-are-we-cards">
+        <div className="card">
+          <div className="card-img">
+            <img src="../../../public/images/hands-solid.svg" alt="" />
+          </div>
+          <div className="card-text">
+            <p>OUR STORY</p>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-img">
+            <img src="" alt="" />
+          </div>
+          <div className="card-text">
+            <p>OUR MISSION</p>
+          </div>
+        </div>
+             <div className="card">
+          <div className="card-img">
+            <img src="" alt="" />
+          </div>
+          <div className="card-text">
+            <p>OUR VALUES</p>
+          </div>
+        </div>
+        </div>
     </section>
   );
 }
