@@ -15,7 +15,7 @@
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   padding: 3em 0 2em 4em;
-  border-radius: 0.2em;
+  border-radius: 0.5em;
   font-size: 0.8em;
 }
 
@@ -72,7 +72,9 @@
 }
 
 .details-content-container .card-saved {
-  padding-left: 32em;
+  width: 1.2em;
+  height: 1.8em;
+  margin-left: 32em;
 }
 
 .details-content-container .card-saved img {

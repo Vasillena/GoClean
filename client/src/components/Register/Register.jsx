@@ -4,6 +4,7 @@ import { useForm } from "../../hooks/useForm";
 import { AuthContext } from "../../contexts/AuthContext";
 
 const RegisterFormKeys = {
+  Name: 'name',
   Email: "email",
   Password: "password",
   RepeatPassword: "repeatPassword",
@@ -14,6 +15,7 @@ export default function Register() {
   // const { onRegisterSubmit } = useAuthContext;
   const { values, changeHandler, onSubmit } = useForm(
     {
+      [RegisterFormKeys.Name]: "",
       [RegisterFormKeys.Email]: "",
       [RegisterFormKeys.Password]: "",
       [RegisterFormKeys.RepeatPassword]: "",
@@ -27,6 +29,14 @@ export default function Register() {
         <div className="signup">
           <form method="POST" id="signup" onSubmit={onSubmit}>
             <h3>Sign up</h3>
+                  <input
+              type="text"
+              name={RegisterFormKeys.Name}
+              placeholder="Name"
+              value={values[RegisterFormKeys.Name]}
+              onChange={changeHandler}
+              required
+            />
             <input
               type="email"
               name={RegisterFormKeys.Email}

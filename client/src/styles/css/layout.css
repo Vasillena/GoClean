@@ -11,7 +11,8 @@
 }
 
 .blur-background {
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 1px 0 0.8rem gray;
 }
 
 header {
