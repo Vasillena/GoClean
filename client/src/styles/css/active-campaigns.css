@@ -7,11 +7,11 @@
 }
 
 .campaigns-text h1 {
-  width: 12em;
+  width: 20em;
   text-align: center;
-  padding-top: 12rem;
-  padding-left: 2em;
-  margin-bottom: 3em;
+  padding-top: 20rem;
+  /* padding-left: 2em; */
+  margin: 0 auto 1.5em auto;
   font-size: 4em;
   font-weight: 100;
   animation: sliderReveal 1s ease forwards;
@@ -28,7 +28,7 @@
 }
 
 .all-campaigns h3 {
-  margin: 2em auto 0.5em auto;
+  margin: 4em auto 1em auto;
   text-align: center;
   font-size: 3em;
 }

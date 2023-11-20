@@ -1,0 +1,10 @@
+.error-page {
+  min-height: 70em;
+}
+
+.error-text {
+  width: 70em;
+  padding-top: 28em;
+  text-align: center;
+  margin: 0 auto;
+}

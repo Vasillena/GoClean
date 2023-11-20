@@ -1,26 +1,80 @@
 .my-profile-section {
-  margin: 0 6em;
+  width: 80em;
+  margin: 10em auto;
+  padding-left: 22em;
 }
 
 .my-profile-container {
+  width: 70em;
   display: flex;
-  flex-direction: column;
+  /* justify-content: center; */
+  /* gap: 1em; */
   align-items: center;
-  gap: 1em;
+  /* gap: 1em; */
 }
 
 .user-img img {
-  width: 14em;
+  width: 22em;
   height: auto;
   aspect-ratio: 1/1;
   object-fit: cover;
-  border-radius: 10em;
+  border-radius: 12em;
 }
 
-.user-name {
+.user-text {
+  width: 26em;
+  height: 10em;
+  text-align: center;
   font-size: 1.8em;
 }
 
-.user-total-campaigns {
-  font-size: 1.2em;
+.user-name {
+  font-size: 1.5em;
+  margin-left: -3em;
 }
+
+.user-total-campaigns {
+  margin-left: -4em;
+}
+
+.rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  padding-left: 5em;
+  /* padding-left: 0.3em; */
+}
+
+.question {
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+}
+
+.question img {
+  width: 0.6em;
+}
+
+.message {
+  visibility: hidden;
+  position: relative;
+  width: 14em;
+  /* top: -3.5em; */
+  /* left: 8em; */
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 1px 0 0.2rem gray;
+  font-size: 0.6em;
+  padding: 1em;
+  border-radius: 0.2em;
+}
+
+.question:hover + .message {
+  visibility: visible;
+  /* display: block; */
+  /* background-color: blueviolet; */
+}
+
+/* .question:hover {
+  transform: translateY(2em);
+} */

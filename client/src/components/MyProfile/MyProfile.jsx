@@ -12,7 +12,7 @@ export default function MyProfile() {
     const localStorageValue = localStorage.getItem('auth')
     const parsedValue = JSON.parse(localStorageValue)
     if(localStorageValue){
-      setProfileName(parsedValue.name)
+      setProfileName(parsedValue.username)
     }
   }, [])
 
@@ -35,15 +35,34 @@ export default function MyProfile() {
         <div className="user-img">
           <img src="./images/our-pride-2.jpg" alt="user-img" />
         </div>
-        <div className="user-name">
+        <div className="user-text">
+         <div className="user-name">
           <h3>{profileName}</h3>
         </div>
         <div className="user-total-campaigns">
           <p>Campaigns posted: {filteredCampaigns.length}</p>
         </div>
-        <div className="rank">
-          {/* <p>Rank:</p> */}
+  <div className="rank">
+  <p>
+    Rank:{" "}
+    {filteredCampaigns.length <= 10
+      ? "Eco-explorer"
+      : filteredCampaigns.length > 10 && filteredCampaigns.length <= 20
+      ? "Eco-Champion"
+      : "Eco-Mastermind"}
+  </p>
+  <div className="question">
+      <img src="./images/circle-question-solid.svg" alt="question-mark" />
+  </div>
+
+{/* </div> */}
+  <div className="message">
+    <p>Eco-explorer: 0-10 campaigns</p>
+        <p>Eco-champion: 11-20 campaigns</p>
+            <p>Eco-mastermind: 21 + campaigns</p>
+  </div>
         </div>
+      </div>
       </div>
     </section>
   );

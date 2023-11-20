@@ -21,8 +21,14 @@ export default function MyCampaigns() {
   return (
     <section
       className="my-campaigns"
-      style={{
-        background: "url(/images/my-campaigns.svg)",
+      // style={{
+      //   background: "url(/images/my-campaigns.svg)",
+      //   backgroundSize: "100% auto",
+      //   backgroundPosition: "center 0",
+      //   backgroundRepeat: "no-repeat",
+      // }}
+          style={{
+        background: "url(/images/hero-img.png)",
         backgroundSize: "100% auto",
         backgroundPosition: "center 0",
         backgroundRepeat: "no-repeat",

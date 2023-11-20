@@ -6,7 +6,7 @@ export default function WhoAreWe() {
       </div>
 
       <div className="who-are-we-text">
-        <p>We are Enthusiasts Building a Responsible Community</p>
+        <h2>We are Enthusiasts Building a Responsible Community</h2>
         <p>
           At GoClean, we&apos;re a dedicated group of individuals who share a common
           passion for building a cleaner future. Our mission is to engage
@@ -24,7 +24,7 @@ export default function WhoAreWe() {
           cleaner, healthier, and more sustainable world.
         </p>
       </div>
-      <div className="who-are-we-cards">
+      {/* <div className="who-are-we-cards">
         <div className="card">
           <div className="card-img">
             <img src="../../../public/images/hands-solid.svg" alt="" />
@@ -49,7 +49,7 @@ export default function WhoAreWe() {
             <p>OUR VALUES</p>
           </div>
         </div>
-        </div>
+        </div> */}
     </section>
   );
 }

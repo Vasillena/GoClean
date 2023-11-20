@@ -1,6 +1,7 @@
 .my-campaigns {
   min-height: 60em;
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   padding: 16em 6em;
 }
@@ -16,7 +17,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 30em;
+  width: 80em;
   margin: 0 auto;
   animation: sliderReveal 1s ease forwards;
 }

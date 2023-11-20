@@ -2,17 +2,17 @@ export default function GoGreen() {
   return (
     <section
       className="go-green-section"
-      style={{
-        background: "url(/images/go-green.png)",
+            style={{
+        background: "url(/images/hero-img.png)",
         backgroundSize: "100% auto",
         backgroundPosition: "center 0",
         backgroundRepeat: "no-repeat",
       }}
     >
       <div className="go-green-text">
-        <h1>
+        {/* <h1>
           Go Green
-        </h1>
+        </h1> */}
         <p>
           Sustainable Living 101: Discover practical tips to reduce your carbon
           footprint, embrace renewable energy, and make eco-conscious choices in

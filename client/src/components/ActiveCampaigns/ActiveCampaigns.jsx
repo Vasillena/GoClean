@@ -42,8 +42,14 @@ export default function ActiveCampaigns() {
   return (
     <section
       className="campaigns-section"
-      style={{
-        background: "url(/images/active-campaigns.svg)",
+      // style={{
+      //   background: "url(/images/active-campaigns.svg)",
+      //   backgroundSize: "100% auto",
+      //   backgroundPosition: "center 2.5%",
+      //   backgroundRepeat: "no-repeat",
+      // }}
+            style={{
+        background: "url(/images/hero-img-2.png)",
         backgroundSize: "100% auto",
         backgroundPosition: "center 0",
         backgroundRepeat: "no-repeat",
@@ -76,7 +82,9 @@ export default function ActiveCampaigns() {
         </p>
         <div className="all-campaigns">
           <h3>Active Campaigns</h3>
-
+        <div className="divider-container">
+      <div className="divider"></div>
+        </div>
           <div className="search">
             <div className="search-element">
               <label htmlFor="search" />

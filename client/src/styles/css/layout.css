@@ -46,7 +46,7 @@ header {
 .hero-title-section {
   height: 22em;
   margin: 0.2em auto;
-  padding: 30em 0;
+  padding: 30em 0 26em 0;
   text-align: center;
   color: rgb(135, 135, 135);
 }
@@ -64,6 +64,22 @@ header {
   animation: sliderReveal 1s ease forwards;
   animation-delay: 0.6s;
 }
+/* 
+.dots {
+  width: 20em;
+  height: 5em;
+  margin: 10em auto 0em auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dot {
+  width: 2em;
+  height: 2em;
+  background-color: rgba(0, 255, 179, 0.696);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2em;
+} */
 
 .footer {
   margin-top: -3em;
@@ -89,4 +105,16 @@ header {
 .github-link {
   color: wheat;
   font-weight: bold;
+}
+
+.divider {
+  height: 0.5px;
+  margin: 3em 0;
+  background: #000;
+  background: -webkit-linear-gradient(
+    left,
+    rgb(255, 255, 255) 0%,
+    rgb(50, 50, 50) 50%,
+    rgb(255, 255, 255) 100%
+  );
 }

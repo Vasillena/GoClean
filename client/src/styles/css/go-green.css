@@ -1,13 +1,13 @@
 .go-green-section {
-  margin-top: 8em;
+  padding-top: 20em;
 }
 
-.go-green-text h1 {
+/* .go-green-text h1 {
   font-family: "Anton", sans-serif;
   font-size: 6em;
   color: white;
   padding: 0 0.2em;
-}
+} */
 
 .go-green-text p {
   font-size: 2em;

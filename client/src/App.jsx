@@ -23,6 +23,7 @@ import {
 import CampaignOwner from "./components/common/CampaignOwner";
 import MyCampaigns from "./components/MyCampaigns/MyCampaigns";
 import ThankYou from "./components/ThankYou/ThankYou";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
 
               <Route path="/goGreen" element={<GoGreen />} />
               <Route path="/thankYou" element={<ThankYou />} />
+               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </main>
           <Footer />

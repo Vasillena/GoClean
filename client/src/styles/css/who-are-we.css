@@ -9,15 +9,16 @@
   text-shadow: 0.5px 0.5px 1px rgb(117, 106, 106);
 }
 
-.who-are-we-title h2 {
-  color: rgb(73, 239, 187);
-}
-
 .who-are-we-text {
   position: relative;
-  margin: -14em 4em 8em 4em;
-  font-size: 1.6em;
+  margin: -14em 2em 6em 2em;
+  font-size: 2em;
   font-weight: 500;
+}
+
+.who-are-we-text h2 {
+  font-size: 1.2em;
+  margin-bottom: 2em;
 }
 
 .middle-img img {
