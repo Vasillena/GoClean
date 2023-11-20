@@ -1,82 +1,71 @@
-.go-green-section {
-  padding-top: 20em;
+/* .go-green-section {
+  padding-top: 2em;
+} */
+
+.go-green-text h1 {
+  width: 20em;
+  text-align: center;
+  padding-top: 22rem;
+  /* padding-left: 2em; */
+  margin: 0 auto 1.5em auto;
+  font-size: 4em;
+  font-weight: 100;
+  animation: sliderReveal 1s ease forwards;
 }
 
-/* .go-green-text h1 {
-  font-family: "Anton", sans-serif;
-  font-size: 6em;
-  color: white;
-  padding: 0 0.2em;
-} */
+.go-green-text h3 {
+  width: 30em;
+  margin: 0 auto;
+  font-size: 2em;
+  font-weight: 100;
+  text-align: center;
+  opacity: 0;
+  animation: sliderReveal 1s ease forwards;
+  animation-delay: 0.6s;
+  margin-bottom: 12em;
+}
 
 .go-green-text p {
   font-size: 2em;
-  font-weight: bold;
   text-align: center;
-  width: 10em;
+  width: 14em;
+  /* margin: 0 auto; */
 }
 
-.go-green-text p:nth-of-type(1) {
-  margin-top: -3em;
-  margin-left: 27.5em;
+.paragraph-container {
+  width: 100%;
+  /* margin: 10em 0; */
+  margin-left: -14em;
+  padding: 0 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8em;
 }
 
-.go-green-text p:nth-of-type(2) {
-  margin-top: 2.5em;
-  margin-left: 41em;
+.paragraph-container img {
+  width: 20em;
+  height: 20em;
+  border-radius: 10em;
 }
 
-.go-green-text p:nth-of-type(3) {
-  margin-top: 2.5em;
-  margin-left: 1em;
+.paragraph-container.even {
+  flex-direction: row-reverse;
+  margin-left: 13em;
 }
 
-.go-green-text p:nth-of-type(4) {
-  margin-top: -3.5em;
-  margin-left: 20em;
-  font-size: 3em;
-  width: 12em;
+.trail img {
+  width: 40em;
+  margin: 0 auto;
 }
 
-.go-green-text p:nth-of-type(5) {
-  margin-top: -5em;
-  margin-left: 14.5em;
-}
-
-.go-green-text p:nth-of-type(6) {
-  margin-top: 2em;
-  margin-left: 1.5em;
-}
-
-.go-green-text p:nth-of-type(7) {
-  margin-top: 2.5em;
-  margin-left: 14.3em;
-}
-
-.go-green-text p:nth-of-type(8) {
-  margin-top: 3em;
-  margin-left: 27.5em;
-}
-
-.go-green-text p:nth-of-type(9) {
-  margin-top: -4em;
-  margin-left: 2em;
-  font-size: 3em;
-  width: 12em;
-}
-
-.go-green-text p:nth-of-type(10) {
-  margin-top: -4.5em;
-  margin-left: 41em;
-}
-
-.who-are-we-bottom h2 {
+.go-green-bottom h2 {
   font-size: 4em;
   text-align: center;
   font-weight: bold;
   margin: 1em auto;
 }
 
-.who-are-we-bottom span {
+.go-green-bottom span {
   color: green;
 }
