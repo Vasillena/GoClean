@@ -1,16 +1,23 @@
 .my-profile-section {
   width: 80em;
-  margin: 10em auto;
+  margin: 6em auto;
   padding-left: 22em;
 }
 
 .my-profile-container {
-  width: 70em;
+  width: 64em;
+  height: 36em;
   display: flex;
+  /* background-color: bisque; */
   /* justify-content: center; */
   /* gap: 1em; */
   align-items: center;
   /* gap: 1em; */
+}
+
+.user-img {
+  align-self: baseline;
+  padding-top: 3em;
 }
 
 .user-img img {
@@ -19,6 +26,20 @@
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 12em;
+}
+
+.change-buttons {
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+.change-img-button,
+.save-img-button {
+  padding: 0 0.5em;
+}
+
+.close {
+  font-size: 2em;
 }
 
 .user-text {

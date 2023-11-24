@@ -5,9 +5,9 @@
 .go-green-text h1 {
   width: 20em;
   text-align: center;
-  padding-top: 22rem;
+  padding-top: 26rem;
   /* padding-left: 2em; */
-  margin: 0 auto 1.5em auto;
+  margin: 0 auto 2em auto;
   font-size: 4em;
   font-weight: 100;
   animation: sliderReveal 1s ease forwards;

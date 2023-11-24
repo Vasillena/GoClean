@@ -28,7 +28,7 @@ export default function MyCampaigns() {
       //   backgroundRepeat: "no-repeat",
       // }}
           style={{
-        background: "url(/images/hero-img.png)",
+        background: "url(/images/hero-img-2.png)",
         backgroundSize: "100% auto",
         backgroundPosition: "center 0",
         backgroundRepeat: "no-repeat",
@@ -38,6 +38,9 @@ export default function MyCampaigns() {
       <div className="my-campaigns-cards">
         <div className="title">
           <h2>My Campaigns</h2>
+        </div>
+          <div className="divider-container">
+      <div className="divider"></div>
         </div>
         <div className="cards">
           {ownerCampaigns.length > 0 ? (

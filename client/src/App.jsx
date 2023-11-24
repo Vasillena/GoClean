@@ -24,12 +24,14 @@ import CampaignOwner from "./components/common/CampaignOwner";
 import MyCampaigns from "./components/MyCampaigns/MyCampaigns";
 import ThankYou from "./components/ThankYou/ThankYou";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <AuthProvider>
       <CampaignProvider>
         <>
+        <ScrollToTop />
           <Navigation />
           <main className="main">
             <Routes>
