@@ -25,8 +25,12 @@ import MyCampaigns from "./components/MyCampaigns/MyCampaigns";
 import ThankYou from "./components/ThankYou/ThankYou";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import { menuResponsiveButton } from "./utils/menuResponsiveButton";
 
 function App() {
+
+menuResponsiveButton()
+
   return (
     <AuthProvider>
       <CampaignProvider>

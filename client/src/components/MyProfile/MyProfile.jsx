@@ -141,9 +141,9 @@ export default function MyProfile() {
           {isModalOpen && (
             <div className="modal">
               <div className="modal-content">
-                <span className="close" onClick={closeModal}>
+                {/* <span className="close" onClick={closeModal}>
                   &times;
-                </span>
+                </span> */}
                 <p>Paste your image URL:</p>
                 <input
                   type="text"
@@ -151,6 +151,7 @@ export default function MyProfile() {
                   onChange={handleImageUrlChange}
                 />
                 <button className="save-img-button" onClick={handleSaveImageUrl}>Save</button>
+                <button className="close-img-button" onClick={closeModal}>Cancel</button>
               </div>
             </div>
           )}

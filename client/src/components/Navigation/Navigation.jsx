@@ -21,15 +21,17 @@ export default function Navigation() {
   return (
     <header>
       <div className="header">
-        <ul className="navbar-list">
-          <li className="navbar-item">
+         <div>
             <button className="menu-button">
-              <i className="fa-solid fa-bars" style={{ color: "#ffffff" }} />
+           <img src="../../../public/images/bookmark-solid.svg" alt="bookmark" />
+              {/* <i className="fa-solid fa-bars" style={{ color: "#ffffff" }} /> */}
             </button>
-            <Link to="/" className="home-link">
+          </div>
+          <nav>
+  <ul className="navbar-list">
+           <li className="navbar-item"><Link to="/" className="home-link">
               Home
-            </Link>
-          </li>
+            </Link>  </li>
           <li className="navbar-item">
             <Link to="/activeCampaigns" className="navbar-link">
               Active campaigns
@@ -68,6 +70,8 @@ export default function Navigation() {
             </li>
           )}
         </ul>
+          </nav>
+      
       </div>
     </header>
   );

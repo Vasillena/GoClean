@@ -6,6 +6,23 @@
   padding: 16em 6em;
 }
 
+.titles {
+  width: 30em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 100;
+}
+
+.title h2 {
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.bold-text {
+  font-weight: bold !important;
+}
+
 .my-campaigns-cards,
 .saved-campaigns-cards {
   display: flex;
@@ -19,8 +36,18 @@
   justify-content: center;
   width: 80em;
   margin: 0 auto;
-  animation: sliderReveal 1s ease forwards;
+  /* animation: sliderReveal 1s ease forwards; */
 }
+
+.card-container {
+  opacity: 0;
+  animation: sliderReveal 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* .my-campaigns .cards {
+  
+} */
 
 .my-campaigns .card-date,
 .my-campaigns .card-time,

@@ -1,6 +1,6 @@
-/* .go-green-section {
-  padding-top: 2em;
-} */
+.go-green-section {
+  overflow-x: hidden;
+}
 
 .go-green-text h1 {
   width: 20em;
