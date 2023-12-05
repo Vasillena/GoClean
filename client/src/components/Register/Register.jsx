@@ -4,7 +4,7 @@ import { useForm } from "../../hooks/useForm";
 import { AuthContext } from "../../contexts/AuthContext";
 
 const RegisterFormKeys = {
-  Name: 'name',
+  Name: "username",
   Email: "email",
   Password: "password",
   RepeatPassword: "repeatPassword",

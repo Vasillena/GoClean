@@ -14,10 +14,10 @@ export default function MyCampaigns() {
     (campaign) => campaign._ownerId === userId
   );
 
-     const savedCampaigns = campaigns.filter((campaign) => {
-    const isSaved = localStorage.getItem(`saved_${campaign._id}`);
-    return isSaved === "true";
-  });
+    const savedCampaignsObject = JSON.parse(localStorage.getItem("savedCampaigns")) || {};
+  const savedCampaigns = Object.keys(savedCampaignsObject).filter(
+    (campaignId) => savedCampaignsObject[campaignId] === true
+  );
 
     const renderCampaigns = () => {
     if (selectedTab === "MyCampaigns") {
@@ -48,7 +48,9 @@ export default function MyCampaigns() {
       animationDelay: "0.6s"
     }}>
           {savedCampaigns.length > 0 ? (
-            savedCampaigns.map((x) => <CampaignCard key={x._id} {...x} />)
+            savedCampaigns.map((x) => {
+                  const campaign = campaigns.find((c) => c._id === x);
+                  return <CampaignCard key={x} {...campaign} />})
           ) : (
             <div className="no-campaigns">
               <p>

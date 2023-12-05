@@ -3,6 +3,7 @@
 
   #site {
     max-width: 600px;
+    /* overflow-x: hidden; */
   }
 
   .menu-button {
@@ -66,7 +67,7 @@
   /* --------------------WHO ARE WE-------------------- */
 
   .who-are-we-section {
-    width: 28em;
+    width: 26em;
     margin: 18em auto 2em auto;
     text-align: center;
   }
@@ -76,7 +77,7 @@
   }
 
   .middle-img img {
-    width: 18em;
+    width: 16em;
   }
 
   /* --------------------OUR PRIDE-------------------- */
@@ -88,7 +89,7 @@
   }
 
   .our-pride-text img {
-    width: 16em;
+    width: 14em;
   }
 
   /* --------------------CONTACT-------------------- */

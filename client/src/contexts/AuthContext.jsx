@@ -40,6 +40,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const onLogout = () => {
+    localStorage.removeItem("joinedUsers");
+localStorage.removeItem("savedCampaigns");
     setAuth({});
     navigate("/");
   };
