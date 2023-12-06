@@ -123,7 +123,7 @@ export default function CampaignDetails() {
                 </p>
                 <div className="card-action-btn">
                   <button
-                    className="join-button"
+                    className={`join-button ${joinedUsers[campaignId]?.includes(userId) ? 'disabled' : ''}`}
                     onClick={onJoinClick}
                     disabled={joinedUsers[campaignId]?.includes(userId)}
                   >

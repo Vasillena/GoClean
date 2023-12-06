@@ -117,3 +117,9 @@
   border: unset;
   padding: 0;
 }
+
+.join-button.disabled {
+  opacity: 0.5;
+  color: darkgray;
+  cursor: not-allowed;
+}
