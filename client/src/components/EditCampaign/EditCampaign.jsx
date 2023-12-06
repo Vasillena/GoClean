@@ -39,9 +39,9 @@ export default function EditCampaign() {
     <section
       className="create-campaign-section"
       style={{
-        background: "url(/images/create-campaign-2.svg)",
+  background: "url(/images/hero-img-2.png)",
         backgroundSize: "100% auto",
-        backgroundPosition: "center 20%",
+        backgroundPosition: "center 0",
         backgroundRepeat: "no-repeat",
       }}
     >

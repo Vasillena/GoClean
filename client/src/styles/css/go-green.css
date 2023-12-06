@@ -6,7 +6,6 @@
   width: 20em;
   text-align: center;
   padding-top: 26rem;
-  /* padding-left: 2em; */
   margin: 0 auto 2em auto;
   font-size: 4em;
   font-weight: 100;
@@ -29,12 +28,10 @@
   font-size: 2em;
   text-align: center;
   width: 14em;
-  /* margin: 0 auto; */
 }
 
 .paragraph-container {
   width: 100%;
-  /* margin: 10em 0; */
   margin-left: -14em;
   padding: 0 4em;
   display: flex;

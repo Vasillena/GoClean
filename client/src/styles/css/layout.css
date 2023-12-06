@@ -10,6 +10,10 @@
   display: none;
 }
 
+.menu-open {
+  top: 0;
+}
+
 .blur-background {
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 1px 0 0.8rem gray;

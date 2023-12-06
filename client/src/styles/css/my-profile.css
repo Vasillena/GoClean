@@ -9,11 +9,7 @@
   width: 64em;
   height: 36em;
   display: flex;
-  /* background-color: bisque; */
-  /* justify-content: center; */
-  /* gap: 1em; */
   align-items: center;
-  /* gap: 1em; */
 }
 
 .user-img {
@@ -30,10 +26,10 @@
 }
 
 .change-buttons {
+  width: 30em;
   margin-top: 1.5em;
   margin-left: -4em;
   text-align: center;
-  width: 30em;
 }
 
 .change-img-button {
@@ -55,10 +51,6 @@
   padding: 0 0.5em;
   border-radius: 0.2em;
 }
-
-/* .close {
-  font-size: 2em;
-} */
 
 .user-text {
   width: 26em;
@@ -82,10 +74,7 @@
   align-items: center;
   justify-content: center;
   height: 2em;
-  /* width: 21em; */
-  /* gap: 0.2em; */
   padding-left: 2em;
-  /* padding-left: 0.3em; */
 }
 
 .rank p {
@@ -105,8 +94,6 @@
 .message {
   visibility: hidden;
   position: relative;
-  /* top: -3.5em; */
-  /* left: 8em; */
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 1px 0 0.2rem gray;
   font-size: 0.6em;
@@ -116,10 +103,4 @@
 
 .question:hover + .message {
   visibility: visible;
-  /* display: block; */
-  /* background-color: blueviolet; */
 }
-
-/* .question:hover {
-  transform: translateY(2em);
-} */

@@ -3,7 +3,7 @@
 
   #site {
     max-width: 600px;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
   }
 
   .menu-button {
@@ -11,6 +11,12 @@
     border: none;
     width: 1em;
     padding: 0 1em;
+  }
+
+  .menu-button.second {
+    position: absolute;
+    top: 0.8em;
+    left: -0.4em;
   }
 
   header {
@@ -23,6 +29,7 @@
     top: -100%;
     height: 100vh;
     width: 100%;
+    padding-top: 5em;
     z-index: 100;
     opacity: 0.9;
     transition: top 0.3s ease;
@@ -32,10 +39,11 @@
   .navbar-list {
     display: flex;
     flex-direction: column;
-    margin-top: 10em;
+    margin-top: 5em;
     align-items: center;
     gap: 1.5em;
     padding: 1em 0;
+    font-size: 1.5em;
   }
 
   .hero-title-section {
@@ -55,9 +63,8 @@
 
   .footer-list {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1em;
+    gap: 1.5em;
   }
 
   .footer-bottom {
@@ -68,12 +75,16 @@
 
   .who-are-we-section {
     width: 26em;
-    margin: 18em auto 2em auto;
+    margin: 24em auto 2em auto;
     text-align: center;
   }
 
   .who-are-we-title {
     font-size: 6.5em;
+  }
+
+  .who-are-we-text {
+    margin: -14em 1em 6em 1em;
   }
 
   .middle-img img {
@@ -92,6 +103,11 @@
     width: 14em;
   }
 
+  .our-pride-paragraph p {
+    font-size: 1.6em;
+    padding-top: 0;
+  }
+
   /* --------------------CONTACT-------------------- */
 
   .contact-section {
@@ -104,6 +120,10 @@
     flex-direction: column;
   }
 
+  .contact-text {
+    width: 12em;
+  }
+
   /* --------------------ACTIVE CAMPAIGNS-------------------- */
 
   .campaigns-text h1 {
@@ -111,9 +131,18 @@
     padding: 3.5em 0;
   }
 
+  .campaigns-text p {
+    width: 98%;
+    margin: 0 auto;
+    font-size: 2em;
+    text-align: center;
+    opacity: 0;
+    animation: sliderReveal 1s ease forwards;
+    animation-delay: 0.6s;
+  }
+
   .active-campaigns {
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     width: auto;
     margin: 0 auto;
@@ -127,14 +156,148 @@
     transform: translateY(0em);
   }
 
+  .campaign-details-section {
+    min-height: 76em;
+    padding-top: 10em;
+  }
+
+  .card-details-container {
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+  }
+
+  .details-img-container img {
+    width: 20em;
+  }
+
+  .details-content-container .card-saved {
+    margin-left: 15em;
+  }
+
+  .card-action-btn {
+    width: 8em;
+    font-size: 0.8em;
+  }
+
   /* --------------------CREATE CAMPAIGN-------------------- */
 
   .create-title {
-    padding: 8em 0.5em 0 0.5em;
+    padding: 12em 0.5em 8.5em 0.5em;
   }
 
   .create-form {
-    width: 10em;
     margin-bottom: 2em;
+  }
+
+  .form-elements input,
+  .form-elements textarea {
+    width: 10em;
+  }
+
+  /* --------------------GO GREEN-------------------- */
+
+  .go-green-text h1 {
+    width: 6em;
+    padding-top: 22rem;
+    margin: 0 auto 4em auto;
+  }
+
+  .go-green-text h3 {
+    width: 10em;
+    margin-bottom: 4em;
+  }
+
+  .go-green-text p {
+    width: 10em;
+  }
+
+  .paragraph-container {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    gap: 4em;
+  }
+
+  .paragraph-container.even {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .trail img {
+    width: 20em;
+    margin: 1em auto;
+  }
+
+  /* --------------------MY PROFILE-------------------- */
+
+  .my-profile-section {
+    width: auto;
+    margin: 5em auto;
+    padding-left: 0;
+  }
+
+  .my-profile-container {
+    width: auto;
+    flex-direction: column;
+  }
+
+  .user-img {
+    width: 20em;
+    padding-top: 0;
+  }
+
+  .user-img img {
+    width: 20em;
+    margin: 0 auto;
+  }
+
+  .change-buttons {
+    width: auto;
+    height: 10em;
+    margin: 1.5em auto 0 auto;
+  }
+
+  .user-text {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .user-name,
+  .user-total-campaigns {
+    margin: 0 auto;
+  }
+
+  .modal-content input {
+    width: 6em;
+  }
+
+  .rank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+    padding: 4.5em 0;
+  }
+
+  /* --------------------MY CAMPAIGNS-------------------- */
+
+  .my-campaigns {
+    padding: 12em 1em;
+  }
+
+  .titles {
+    width: auto;
+    margin: 8em auto 0 auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cards {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
   }
 }

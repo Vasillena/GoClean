@@ -36,14 +36,9 @@ export default function MyProfile() {
     setNewImageUrl(event.target.value);
   };
 
-  // const handleSaveImageUrl = () => {
-  //   setProfileImageUrl(newImageUrl);
-  //   closeModal();
-  // };
-
   const handleSaveImageUrl = () => {
   setProfileImageUrl(newImageUrl);
-  // Save the updated profile information to local storage
+
   const localStorageValue = localStorage.getItem("auth");
   const parsedValue = JSON.parse(localStorageValue);
   if (localStorageValue) {
@@ -73,9 +68,6 @@ export default function MyProfile() {
           {isModalOpen && (
             <div className="modal">
               <div className="modal-content">
-                {/* <span className="close" onClick={closeModal}>
-                  &times;
-                </span> */}
                 <p>Paste your image URL:</p>
                 <input
                   type="text"

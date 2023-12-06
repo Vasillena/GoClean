@@ -36,7 +36,6 @@
   justify-content: center;
   width: 80em;
   margin: 0 auto;
-  /* animation: sliderReveal 1s ease forwards; */
 }
 
 .card-container {
@@ -44,10 +43,6 @@
   animation: sliderReveal 1s ease forwards;
   animation-delay: 0.6s;
 }
-
-/* .my-campaigns .cards {
-  
-} */
 
 .my-campaigns .card-date,
 .my-campaigns .card-time,

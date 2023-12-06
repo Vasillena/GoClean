@@ -42,12 +42,6 @@ export default function ActiveCampaigns() {
   return (
     <section
       className="campaigns-section"
-      // style={{
-      //   background: "url(/images/active-campaigns.svg)",
-      //   backgroundSize: "100% auto",
-      //   backgroundPosition: "center 2.5%",
-      //   backgroundRepeat: "no-repeat",
-      // }}
             style={{
         background: "url(/images/hero-img-2.png)",
         backgroundSize: "100% auto",
@@ -70,12 +64,6 @@ export default function ActiveCampaigns() {
           why it matters to you. Inspire others to take part in this collective
           effort to create a cleaner world.
         </p>
-        {/* <p>
-          Once your campaign is live, share it with your network and through our
-          platform to reach a wider audience. Encourage others to spread the
-          word, inviting friends, family, coworkers, and community members to
-          participate.
-        </p> */}
         <p>
           Together, we can create a cleaner, healthier, and more beautiful
           world, one campaign at a time.
