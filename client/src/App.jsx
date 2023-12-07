@@ -4,6 +4,10 @@ import { Routes, Route } from "react-router-dom";
 
 import { AuthProvider } from "./contexts/AuthContext";
 import CampaignProvider from "./contexts/CampaignContext";
+import {
+  IsAuthRouteGuard,
+  IsNotAuthRouteGuard,
+} from "./components/common/RouteGuard";
 
 import Footer from "./components/Footer/Footer";
 import Navigation from "./components/Navigation/Navigation";
@@ -16,15 +20,13 @@ import Register from "./components/Register/Register";
 import EditCampaign from "./components/EditCampaign/EditCampaign";
 import CampaignDetails from "./components/CampaignDetails/CampaignDetails";
 import Logout from "./components/Logout/Logout";
-import {
-  IsAuthRouteGuard,
-  IsNotAuthRouteGuard,
-} from "./components/common/RouteGuard";
-import CampaignOwner from "./components/common/CampaignOwner";
 import MyCampaigns from "./components/MyCampaigns/MyCampaigns";
 import ThankYou from "./components/ThankYou/ThankYou";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+
+import CampaignOwner from "./components/common/CampaignOwner";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import Weather from "./components/Weather/Weather";
 
 function App() {
 
@@ -34,6 +36,7 @@ function App() {
         <>
         <ScrollToTop />
           <Navigation />
+          <Weather/>
           <main className="main">
             <Routes>
               <Route path="/" element={<Home />} />

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 export default function CampaignCard({
   _id,
   date,
-  time,
   location,
   locationUrl,
 }) {

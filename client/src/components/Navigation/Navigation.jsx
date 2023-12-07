@@ -4,9 +4,11 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Navigation() {
   const { isAuthenticated } = useContext(AuthContext);
-    const [isScrolled, setIsScrolled] = useState(false);
-      const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -19,14 +21,17 @@ export default function Navigation() {
     };
   }, []);
 
+
+
     const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
-    console.log(setIsMenuOpen)
   };
 
     const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+
 
   return (
     <header className={isScrolled ? "blur-background" : ""}>
@@ -38,11 +43,11 @@ export default function Navigation() {
           </div>
           <nav className={isMenuOpen ? "menu-open" : ""}>
   <ul className="navbar-list">
-     <div>
+     {/* <div>
             <button className="menu-button second" onClick={toggleMenu}>
            <img src="../../../public/images/bars-solid.svg" alt="bookmark" />
             </button>
-          </div>
+          </div> */}
            <li className="navbar-item"><Link to="/" className="home-link" onClick={closeMenu}>
               Home
             </Link>  </li>

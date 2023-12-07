@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+// import Weather from "../Weather/Weather";
 
 export default function Footer() {
   return (
     <footer className="footer">
+      {/* <Weather/> */}
       <div className="footer-top">
         <ul className="footer-list">
           <li>
