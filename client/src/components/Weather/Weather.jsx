@@ -1,41 +1,15 @@
 import React, { useState} from "react";
 import * as weatherService from "../../services/weatherService.js";
 
-// const cityForm = document.querySelector(".city-form");
-
-// const updateCity = async (city) => {
-//   const cityDets = await weatherService.getCity(city);
-//   const weather = await weatherService.getWeather(cityDets.Key);
-
-//   return {
-//     cityDets,
-//     weather,
-//   };
-// };
-
-// cityForm.addEventListener("submit", (e) => {
-//   e.preventDefault();
-
-//   const city = cityForm.city.value.trim();
-//   cityForm.reset();
-
-//   updateCity(city)
-//     .then((data) => console.log(data))
-//     .catch((err) => console.log(err));
-// });
-
-
 export default function Weather() {
 
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
+    const [isWeatherOpen, setIsWeatherOpen] = useState(false);
 
   const updateCity = async (city) => {
     const cityInfo = await weatherService.getCity(city);
     const weatherInfo = await weatherService.getWeather(cityInfo.Key);
-
-       console.log(cityInfo)
-       console.log(weatherInfo)
 
     setWeatherData({
       cityInfo,
@@ -49,12 +23,16 @@ export default function Weather() {
     setCity("");
   };
 
+      const toggleWeather = () => {
+    setIsWeatherOpen((prev) => !prev);
+  };
+
   return (
     <section
-      className="weather">
-        <div className="open-close">
-            <p>^</p>
-        </div>
+      className={`weather ${isWeatherOpen ? "weather-open" : ""}`}>
+        <button className="open-close" onClick={toggleWeather}>
+            <p>&#9730;</p>
+        </button>
       <div className="weather-card">
         <form className="city-form" onSubmit={handleSubmit}
         >
@@ -65,10 +43,14 @@ export default function Weather() {
         </form>
       <div className="city"> {weatherData?.cityInfo?.LocalizedName || "City"}</div>
       <div className="weather-img">
-        <img src={weatherData?.weatherInfo?.WeatherIcon || "Weather icon"} alt="weather-img" />
+        <img   src={
+      weatherData?.weatherInfo?.WeatherIcon
+        ? `./images/weather/${weatherData?.weatherInfo?.WeatherIcon}.svg`
+        : "./images/weather/default.png"
+    } alt="weather-img" />
       </div>
       <div className="temperature">{weatherData?.weatherInfo?.Temperature?.Metric?.Value || "Temperature"}
-          °C</div>
+           °C</div>
       <div className="condition">{weatherData?.weatherInfo?.WeatherText || "Weather condition"}</div>
       </div>
     </section>

@@ -1,21 +1,31 @@
 .weather {
   position: fixed;
   top: 14em;
-  right: 0;
+  right: -14em;
   display: flex;
   align-items: center;
+  font-size: 1em;
   z-index: 100;
+  transition: right 0.3s ease;
 }
 
 .open-close {
   width: 1em;
   height: 2em;
+  font-size: 1.2em;
+  padding: 0.2em;
+  margin: 0;
   background-color: white;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  box-shadow: 0px 14px 20px rgba(34, 35, 58, 0.2);
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0.5em 0 0 0.5em;
+}
+
+.weather-open {
+  right: 0;
 }
 
 .weather-card {
@@ -38,12 +48,10 @@
   width: 6em;
   border: none;
   border-bottom: 1px solid darkgray;
-  font-size: 1.2em;
-  /* box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2); */
-  /* margin: 0 auto; */
 }
 
 .weather-img img {
   width: 8em;
   aspect-ratio: 1/1;
+  object-fit: cover;
 }
