@@ -27,6 +27,7 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import CampaignOwner from "./components/common/CampaignOwner";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Weather from "./components/Weather/Weather";
+import BackToTop from "./components/BackToTop/BackToTop";
 
 function App() {
 
@@ -68,6 +69,7 @@ function App() {
                <Route path="*" element={<ErrorPage />} />
             </Routes>
           </main>
+          <BackToTop/>
           <Footer />
         </>
       </CampaignProvider>

@@ -71,6 +71,23 @@
     text-align: center;
   }
 
+  .back-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 3em;
+    right: 1em;
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    background-color: rgba(196, 196, 196, 0.5);
+  }
+
+  .back-to-top button {
+    border: none;
+  }
+
   /* --------------------WHO ARE WE-------------------- */
 
   .who-are-we-section {

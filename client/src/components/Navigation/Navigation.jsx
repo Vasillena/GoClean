@@ -38,7 +38,7 @@ export default function Navigation() {
       <div className="header">
          <div>
             <button className="menu-button" onClick={toggleMenu}>
-           <img src="../../../public/images/bars-solid.svg" alt="bookmark" />
+           <img src="../../../public/images/bars-solid.svg" alt="bars" />
             </button>
           </div>
           <nav className={isMenuOpen ? "menu-open" : ""}>
