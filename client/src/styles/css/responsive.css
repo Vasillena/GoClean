@@ -188,6 +188,10 @@
     width: 20em;
   }
 
+  .details-content-container {
+    width: 20em;
+  }
+
   .details-content-container .card-saved {
     margin-left: 15em;
   }

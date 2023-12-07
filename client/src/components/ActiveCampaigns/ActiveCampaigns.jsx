@@ -1,21 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import { useCampaignContext } from "../../contexts/CampaignContext";
-import {campaignServiceFactory} from '../../services/campaignService';
+import { campaignServiceFactory } from "../../services/campaignService";
 import CampaignCard from "./CampaignCard/CampaignCard";
 
 export default function ActiveCampaigns() {
-    const [campaigns, setCampaigns] = useState([]);
-      const campaignService = campaignServiceFactory();
-  // const { campaigns } = useCampaignContext();
+  const [campaigns, setCampaigns] = useState([]);
+  const campaignService = campaignServiceFactory();
   const [searchQuery, setSearchQuery] = useState("");
   const [error, setError] = useState(null);
 
-    useEffect(() => {
-    campaignService.getAll()
-    .then(result => setCampaigns(result))
-    .catch(error => console.log(error)
-    );
+  useEffect(() => {
+    campaignService
+      .getAll()
+      .then((result) => setCampaigns(result))
+      .catch((error) => console.log(error));
   }, []);
 
   const handleSearch = (event) => {
@@ -52,7 +50,7 @@ export default function ActiveCampaigns() {
   return (
     <section
       className="campaigns-section"
-            style={{
+      style={{
         background: "url(/images/hero-img-2.png)",
         backgroundSize: "100% auto",
         backgroundPosition: "center 0",
@@ -80,9 +78,9 @@ export default function ActiveCampaigns() {
         </p>
         <div className="all-campaigns">
           <h3>Active Campaigns</h3>
-        <div className="divider-container">
-      <div className="divider"></div>
-        </div>
+          <div className="divider-container">
+            <div className="divider"></div>
+          </div>
           <div className="search">
             <div className="search-element">
               <label htmlFor="search" />

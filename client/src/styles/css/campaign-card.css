@@ -61,7 +61,7 @@
 
 .details-img-container img {
   position: relative;
-  width: 33em;
+  width: 34em;
   height: auto;
   aspect-ratio: 1/1;
   border-radius: 0.2em;
@@ -75,7 +75,7 @@
 .details-content-container .card-saved {
   width: 1.2em;
   height: 1.8em;
-  margin-left: 32em;
+  margin-left: 31em;
 }
 
 .details-content-container .card-saved img {
