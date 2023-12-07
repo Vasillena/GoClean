@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { useCampaignContext } from "../../contexts/CampaignContext";
 import { useForm } from "../../hooks/useForm";
+import { validateInputs } from "../../utils/validateInputs";
 
 export default function CreateCampaign() {
   const { onCreateCampaignSubmit } = useCampaignContext();
-  const { values, changeHandler, onSubmit } = useForm(
+  const { values, changeHandler, onSubmit, submitting, formError, errors } = useForm(
     {
       username: "",
       location: "",
@@ -13,27 +13,9 @@ export default function CreateCampaign() {
       locationUrl: "",
       description: "",
     },
-    onCreateCampaignSubmit
+    onCreateCampaignSubmit,
+    validateInputs
   );
-
-  const [formError, setFormError] = useState(null);
-  const [submitting, setSubmitting] = useState(false);
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    setFormError(null);
-    setSubmitting(true);
-
-    try {
-      await onSubmit();
-    } catch (error) {
-      setFormError(
-        "An error occurred while submitting the form. Please try again later."
-      );
-    }
-
-    setSubmitting(false);
-  };
 
   return (
     <section
@@ -48,8 +30,9 @@ export default function CreateCampaign() {
       <div className="create-title">
         <h1>Start Your Own Clean Campaign</h1>
       </div>
+             {formError && <p className="form-error">{formError}</p>}
       <div className="create-form">
-        <form id="create" onSubmit={onSubmit}>
+        <form id="create" onSubmit={(e) => onSubmit(e, validateInputs)}>
           <div className="container">
             <div className="form-elements">
               <label htmlFor="username" />
@@ -62,6 +45,7 @@ export default function CreateCampaign() {
                 placeholder="Name"
                 required
               />
+               {errors.username && <p className="form-error">{errors.username}</p>}
             </div>
             <div className="form-elements">
               <label htmlFor="location" />
@@ -74,6 +58,7 @@ export default function CreateCampaign() {
                 placeholder="Location"
                 required
               />
+                {errors.location && <p className="form-error">{errors.location}</p>}
             </div>
             <div className="form-elements">
               <label htmlFor="date" />
@@ -83,9 +68,10 @@ export default function CreateCampaign() {
                 type="text"
                 id="date"
                 name="date"
-                placeholder="Date"
+                placeholder="Date (01.01.2000)"
                 required
               />
+                {errors.date && <p className="form-error">{errors.date}</p>}
             </div>
             <div className="form-elements">
               <label htmlFor="time" />
@@ -95,9 +81,10 @@ export default function CreateCampaign() {
                 type="text"
                 id="time"
                 name="time"
-                placeholder="Time"
+                placeholder="Time (12:00)"
                 required
               />
+                {errors.time && <p className="form-error">{errors.time}</p>}
             </div>
             <div className="form-elements">
               <label htmlFor="locationUrl" />
@@ -107,9 +94,10 @@ export default function CreateCampaign() {
                 type="text"
                 id="locationUrl"
                 name="locationUrl"
-                placeholder="Location image URL"
+                placeholder="Location image URL (http:\\ / https:\\"
                 required
               />
+                {errors.locationUrl && <p className="form-error">{errors.locationUrl}</p>}
             </div>
             <div className="form-elements">
               <label htmlFor="description" />
@@ -123,6 +111,7 @@ export default function CreateCampaign() {
                 placeholder="Tell us more about your campaign"
                 required
               />
+                {errors.description && <p className="form-error">{errors.description}</p>}
             </div>
             <div className="form-elements">
               <input
@@ -132,7 +121,6 @@ export default function CreateCampaign() {
                 disabled={submitting}
               />
             </div>
-            {formError && <p className="form-error">{formError}</p>}
           </div>
         </form>
       </div>

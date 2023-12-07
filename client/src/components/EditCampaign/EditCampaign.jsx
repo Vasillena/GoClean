@@ -5,12 +5,13 @@ import { useCampaignContext } from "../../contexts/CampaignContext";
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { campaignServiceFactory } from "../../services/campaignService";
+import { validateInputs } from "../../utils/validateInputs";
 
 export default function EditCampaign() {
   const { onCampaignEditSubmit } = useCampaignContext();
   const { campaignId } = useParams();
   const campaignService = useService(campaignServiceFactory);
-  const { values, changeHandler, onSubmit, changeValues } = useForm(
+  const { values, changeHandler, onSubmit, changeValues, submitting, formError, errors } = useForm(
     {
       _id: "",
       username: "",
@@ -20,7 +21,8 @@ export default function EditCampaign() {
       locationUrl: "",
       description: "",
     },
-    onCampaignEditSubmit
+    onCampaignEditSubmit,
+    validateInputs
   );
   const [error, setError] = useState(null);
 
@@ -48,13 +50,9 @@ export default function EditCampaign() {
       <div className="create-title">
         <h1>Edit your Campaign</h1>
       </div>
+              {formError && <p className="form-error">{formError}</p>}
       <div className="create-form">
-        {error ? (
-          <div className="error-message">
-            <p>{error}</p>
-          </div>
-        ) : (
-          <form id="create" method="post" onSubmit={onSubmit}>
+        <form id="create" onSubmit={(e) => onSubmit(e, validateInputs)}>
             <div className="container">
               <div className="form-elements">
                 <label htmlFor="username" />
@@ -67,6 +65,7 @@ export default function EditCampaign() {
                   onChange={changeHandler}
                   required
                 />
+                   {errors.username && <p className="form-error">{errors.username}</p>}
               </div>
               <div className="form-elements">
                 <label htmlFor="location" />
@@ -79,6 +78,7 @@ export default function EditCampaign() {
                   onChange={changeHandler}
                   required
                 />
+                    {errors.location && <p className="form-error">{errors.location}</p>}
               </div>
               <div className="form-elements">
                 <label htmlFor="date" />
@@ -91,6 +91,7 @@ export default function EditCampaign() {
                   onChange={changeHandler}
                   required
                 />
+                    {errors.date && <p className="form-error">{errors.date}</p>}
               </div>
               <div className="form-elements">
                 <label htmlFor="time" />
@@ -103,6 +104,7 @@ export default function EditCampaign() {
                   onChange={changeHandler}
                   required
                 />
+                   {errors.time && <p className="form-error">{errors.time}</p>}
               </div>
               <div className="form-elements">
                 <label htmlFor="locationUrl" />
@@ -115,6 +117,7 @@ export default function EditCampaign() {
                   onChange={changeHandler}
                   required
                 />
+                    {errors.locationUrl && <p className="form-error">{errors.locationUrl}</p>}
               </div>
               <div className="form-elements">
                 <label htmlFor="description" />
@@ -128,17 +131,18 @@ export default function EditCampaign() {
                   onChange={changeHandler}
                   required
                 />
+                        {errors.description && <p className="form-error">{errors.description}</p>}
               </div>
               <div className="form-elements">
-                <input
-                  type="submit"
-                  className="submit-button"
-                  defaultValue="SEND"
-                />
+             <input
+                type="submit"
+                className="submit-button"
+                value={submitting ? "Submitting..." : "SEND"}
+                disabled={submitting}
+              />
               </div>
             </div>
           </form>
-        )}
       </div>
     </section>
   );

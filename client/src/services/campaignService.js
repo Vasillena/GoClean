@@ -35,10 +35,8 @@ export const campaignServiceFactory = (token) => {
     return result;
   };
 
-  const deleteCampaign = async (campaignId) => {
-    const result = await request.delete(`${baseUrl}/${campaignId}`);
-    return result;
-  };
+  const deleteCampaign = async (campaignId) =>
+    request.delete(`${baseUrl}/${campaignId}`);
 
   return {
     getAll,

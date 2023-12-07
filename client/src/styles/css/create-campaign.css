@@ -29,11 +29,17 @@
   padding-bottom: 2em;
 }
 
-.form-elements {
+.container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-elements .submit-button {
   width: 8em;
+}
+
+.form-error {
+  text-align: center;
+  font-size: 0.8em;
 }

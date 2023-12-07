@@ -52,6 +52,7 @@
 }
 
 .details-content-container {
+  width: 40em;
   display: flex;
   flex-direction: column;
   padding: 3em 2em;
@@ -84,6 +85,7 @@
 
 .details-content-container .card-location {
   font-size: 2em;
+  margin-top: 1.5em;
 }
 
 .card-buttons-container {

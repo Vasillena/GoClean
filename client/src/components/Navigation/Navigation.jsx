@@ -43,11 +43,6 @@ export default function Navigation() {
           </div>
           <nav className={isMenuOpen ? "menu-open" : ""}>
   <ul className="navbar-list">
-     {/* <div>
-            <button className="menu-button second" onClick={toggleMenu}>
-           <img src="../../../public/images/bars-solid.svg" alt="bookmark" />
-            </button>
-          </div> */}
            <li className="navbar-item"><Link to="/" className="home-link" onClick={closeMenu}>
               Home
             </Link>  </li>

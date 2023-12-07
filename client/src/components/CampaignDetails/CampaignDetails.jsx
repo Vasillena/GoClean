@@ -18,27 +18,45 @@ export default function CampaignDetails() {
     JSON.parse(localStorage.getItem("savedCampaigns")) || {}
   );
 
-  useEffect(() => {
-    campaignService.getOne(campaignId).then((result) => {
-      setCampaign(result);
-    });
-  }, [campaignId, campaignService]);
+  // useEffect(() => {
+  //   campaignService.getOne(campaignId).then((result) => {
+  //     setCampaign(result);
+  //   });
+  // }, [campaignId, campaignService]);
+
+    useEffect(() => {
+    campaignService.getOne(campaignId).then(setCampaign)
+  }, [campaignId]);
 
   const isOwner = campaign._ownerId === userId;
 
-  const onDeleteClick = async () => {
-    const result = window.confirm(
-      "You are about to delete the current campaign! Proceed?"
-    );
+  // const onDeleteClick = async () => {
+  //   const result = window.confirm(
+  //     "You are about to delete the current campaign! Proceed?"
+  //   );
 
+  //   if (result) {
+  //     await campaignService.delete(campaign._id);
+
+  //     deleteCampaign(campaign._id);
+
+  //     navigate("/activeCampaigns");
+  //   }
+  // };
+
+  const onDeleteClick = async () => {
+  try {
+    const result = window.confirm("You are about to delete the current campaign! Proceed?");
     if (result) {
       await campaignService.delete(campaign._id);
-
       deleteCampaign(campaign._id);
-
       navigate("/activeCampaigns");
     }
-  };
+  } catch (error) {
+    console.error("Error deleting campaign:", error);
+  }
+};
+
 
   const onJoinClick = () => {
     if (!joinedUsers[campaignId]?.includes(userId)) {
@@ -79,6 +97,7 @@ export default function CampaignDetails() {
           <img src={campaign.locationUrl} alt="Location img" />
         </div>
         <div className="details-content-container">
+           {isAuthenticated && (
           <div className="card-saved" onClick={onSaveClick}>
             {isSaved ? (
               <img src="/images/bookmark-solid.svg" alt="bookmark" />
@@ -86,6 +105,7 @@ export default function CampaignDetails() {
               <img src="/images/bookmark-regular.svg" alt="bookmark" />
             )}
           </div>
+           )}
           <div className="card-location">
             <p>{campaign.location}</p>
           </div>

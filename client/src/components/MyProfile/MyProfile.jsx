@@ -7,6 +7,7 @@ export default function MyProfile() {
   const [profileImageUrl, setProfileImageUrl] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newImageUrl, setNewImageUrl] = useState("");
+    const [error, setError] = useState({});
   const { campaigns } = useCampaignContext();
   const { userId } = useContext(AuthContext);
 
@@ -30,13 +31,25 @@ export default function MyProfile() {
   const closeModal = () => {
     setIsModalOpen(false);
        setNewImageUrl("");
+        setError({});
   };
 
   const handleImageUrlChange = (event) => {
     setNewImageUrl(event.target.value);
   };
 
+  // const handleSaveImageUrl = () => {
+  // setProfileImageUrl(newImageUrl);
+
   const handleSaveImageUrl = () => {
+    const newError = {};
+
+    if (!newImageUrl.startsWith("http://") && !newImageUrl.startsWith("https://")) {
+      newError.imageUrl = "Image URL should start with http:// or https://.";
+      setError(newError);
+      return;
+    }
+
   setProfileImageUrl(newImageUrl);
 
   const localStorageValue = localStorage.getItem("auth");
@@ -76,6 +89,7 @@ export default function MyProfile() {
                 />
                 <button className="save-img-button" onClick={handleSaveImageUrl}>Save</button>
                 <button className="close-img-button" onClick={closeModal}>Cancel</button>
+                  {error.imageUrl && <p className="form-error">{error.imageUrl}</p>}
               </div>
             </div>
           )}

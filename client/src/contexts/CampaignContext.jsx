@@ -28,6 +28,18 @@ export default function CampaignProvider({ children }) {
     });
   }, []);
 
+//   useEffect(() => {
+//   campaignService.getAll().then(
+//     (result) => {
+//       setCampaigns(result);
+//     },
+//     (error) => {
+//       console.error("Error fetching campaigns:", error);
+//       // Handle the error appropriately
+//     }
+//   );
+// }, []);
+
   useEffect(() => {
     localStorage.setItem("joinedUsers", JSON.stringify(joinedUsers));
   }, [joinedUsers]);
