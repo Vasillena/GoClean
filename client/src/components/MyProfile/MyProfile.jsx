@@ -1,15 +1,23 @@
 import { useState, useEffect, useContext } from "react";
-import { useCampaignContext } from "../../contexts/CampaignContext";
 import { AuthContext } from "../../contexts/AuthContext";
+import { campaignServiceFactory } from "../../services/campaignService";
 
 export default function MyProfile() {
   const [profileName, setProfileName] = useState("");
   const [profileImageUrl, setProfileImageUrl] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newImageUrl, setNewImageUrl] = useState("");
-    const [error, setError] = useState({});
-  const { campaigns } = useCampaignContext();
+  const [error, setError] = useState({});
   const { userId } = useContext(AuthContext);
+  const [campaigns, setCampaigns] = useState([]);
+  const campaignService = campaignServiceFactory();
+
+  useEffect(() => {
+    campaignService
+      .getAll()
+      .then((result) => setCampaigns(result))
+      .catch((error) => console.log(error));
+  }, []);
 
   useEffect(() => {
     const localStorageValue = localStorage.getItem("auth");
@@ -30,43 +38,42 @@ export default function MyProfile() {
 
   const closeModal = () => {
     setIsModalOpen(false);
-       setNewImageUrl("");
-        setError({});
+    setNewImageUrl("");
+    setError({});
   };
 
   const handleImageUrlChange = (event) => {
     setNewImageUrl(event.target.value);
   };
 
-  // const handleSaveImageUrl = () => {
-  // setProfileImageUrl(newImageUrl);
-
   const handleSaveImageUrl = () => {
     const newError = {};
 
-    if (!newImageUrl.startsWith("http://") && !newImageUrl.startsWith("https://")) {
+    if (
+      !newImageUrl.startsWith("http://") &&
+      !newImageUrl.startsWith("https://")
+    ) {
       newError.imageUrl = "Image URL should start with http:// or https://.";
       setError(newError);
       return;
     }
 
-  setProfileImageUrl(newImageUrl);
+    setProfileImageUrl(newImageUrl);
 
-  const localStorageValue = localStorage.getItem("auth");
-  const parsedValue = JSON.parse(localStorageValue);
-  if (localStorageValue) {
-    localStorage.setItem(
-      "auth",
-      JSON.stringify({
-        ...parsedValue,
-        profileImageUrl: newImageUrl,
-      })
-    );
-  }
+    const localStorageValue = localStorage.getItem("auth");
+    const parsedValue = JSON.parse(localStorageValue);
+    if (localStorageValue) {
+      localStorage.setItem(
+        "auth",
+        JSON.stringify({
+          ...parsedValue,
+          profileImageUrl: newImageUrl,
+        })
+      );
+    }
     setNewImageUrl("");
-  closeModal();
-};
-
+    closeModal();
+  };
 
   return (
     <section className="my-profile-section">
@@ -77,24 +84,34 @@ export default function MyProfile() {
             alt="user-img"
           />
           <div className="change-buttons">
-                <button className="change-img-button" onClick={openModal}>Change Profile Picture</button>
-          {isModalOpen && (
-            <div className="modal">
-              <div className="modal-content">
-                <p>Paste your image URL:</p>
-                <input
-                  type="text"
-                  value={newImageUrl}
-                  onChange={handleImageUrlChange}
-                />
-                <button className="save-img-button" onClick={handleSaveImageUrl}>Save</button>
-                <button className="close-img-button" onClick={closeModal}>Cancel</button>
-                  {error.imageUrl && <p className="form-error">{error.imageUrl}</p>}
+            <button className="change-img-button" onClick={openModal}>
+              Change Profile Picture
+            </button>
+            {isModalOpen && (
+              <div className="modal">
+                <div className="modal-content">
+                  <p>Paste your image URL:</p>
+                  <input
+                    type="text"
+                    value={newImageUrl}
+                    onChange={handleImageUrlChange}
+                  />
+                  <button
+                    className="save-img-button"
+                    onClick={handleSaveImageUrl}
+                  >
+                    Save
+                  </button>
+                  <button className="close-img-button" onClick={closeModal}>
+                    Cancel
+                  </button>
+                  {error.imageUrl && (
+                    <p className="form-error">{error.imageUrl}</p>
+                  )}
+                </div>
               </div>
-            </div>
-          )}
+            )}
           </div>
-      
         </div>
         <div className="user-text">
           <div className="user-name">

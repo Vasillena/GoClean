@@ -3,72 +3,38 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useService } from "../../hooks/useService";
 import { campaignServiceFactory } from "../../services/campaignService";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useCampaignContext } from "../../contexts/CampaignContext";
 
 export default function CampaignDetails() {
   const { userId, isAuthenticated } = useContext(AuthContext);
   const { campaignId } = useParams();
   const [campaign, setCampaign] = useState({});
+  const [campaigns, setCampaigns] = useState([]);
   const campaignService = useService(campaignServiceFactory);
-  const { deleteCampaign } = useCampaignContext();
   const navigate = useNavigate();
-  const { joinedUsers, joinCampaign } = useCampaignContext();
-
+  const [isSaved, setIsSaved] = useState(false);
   const [savedCampaigns, setSavedCampaigns] = useState(
     JSON.parse(localStorage.getItem("savedCampaigns")) || {}
   );
+  const [joinedUsers, setJoinedUsers] = useState(
+    JSON.parse(localStorage.getItem("joinedUsers")) || {}
+  );
 
-  // useEffect(() => {
-  //   campaignService.getOne(campaignId).then((result) => {
-  //     setCampaign(result);
-  //   });
-  // }, [campaignId, campaignService]);
-
-    useEffect(() => {
-    campaignService.getOne(campaignId).then(setCampaign)
+  useEffect(() => {
+    campaignService
+      .getOne(campaignId)
+      .then(setCampaign)
+      .catch((error) => {
+        console.log(error);
+      });
   }, [campaignId]);
 
   const isOwner = campaign._ownerId === userId;
 
-  // const onDeleteClick = async () => {
-  //   const result = window.confirm(
-  //     "You are about to delete the current campaign! Proceed?"
-  //   );
-
-  //   if (result) {
-  //     await campaignService.delete(campaign._id);
-
-  //     deleteCampaign(campaign._id);
-
-  //     navigate("/activeCampaigns");
-  //   }
-  // };
-
-  const onDeleteClick = async () => {
-  try {
-    const result = window.confirm("You are about to delete the current campaign! Proceed?");
-    if (result) {
-      await campaignService.delete(campaign._id);
-      deleteCampaign(campaign._id);
-      navigate("/activeCampaigns");
-    }
-  } catch (error) {
-    console.error("Error deleting campaign:", error);
-  }
-};
-
-
-  const onJoinClick = () => {
-    if (!joinedUsers[campaignId]?.includes(userId)) {
-      joinCampaign(campaignId, userId);
-    }
-  };
-
-  const [isSaved, setIsSaved] = useState(false);
+  //-----------------SAVE-----------------
 
   useEffect(() => {
     const localStorageValue = localStorage.getItem(`saved_${campaign._id}`);
-    setIsSaved(savedCampaigns[campaign._id] || (localStorageValue === "true"));
+    setIsSaved(savedCampaigns[campaign._id] || localStorageValue === "true");
   }, [campaign._id, savedCampaigns]);
 
   const onSaveClick = () => {
@@ -80,6 +46,44 @@ export default function CampaignDetails() {
     setSavedCampaigns(newSavedCampaigns);
 
     localStorage.setItem("savedCampaigns", JSON.stringify(newSavedCampaigns));
+  };
+
+  //-----------------JOIN-----------------
+
+  const onJoinClick = () => {
+    if (!joinedUsers[campaignId]?.includes(userId)) {
+      setJoinedUsers((prevJoinedUsers) => ({
+        ...prevJoinedUsers,
+        [campaignId]: [...(prevJoinedUsers[campaignId] || []), userId],
+      }));
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("joinedUsers", JSON.stringify(joinedUsers));
+  }, [joinedUsers]);
+
+  useEffect(() => {
+    localStorage.setItem("joinedUsers", JSON.stringify(joinedUsers));
+  }, [joinedUsers]);
+
+  //-----------------DELETE-----------------
+
+  const onDeleteClick = async () => {
+    try {
+      const result = window.confirm(
+        "You are about to delete the current campaign! Proceed?"
+      );
+      if (result) {
+        await campaignService.delete(campaign._id);
+        setCampaigns((state) =>
+          state.filter((campaign) => campaign._id !== campaignId)
+        );
+        navigate("/activeCampaigns");
+      }
+    } catch (error) {
+      console.error("Error deleting campaign:", error);
+    }
   };
 
   return (
@@ -97,15 +101,15 @@ export default function CampaignDetails() {
           <img src={campaign.locationUrl} alt="Location img" />
         </div>
         <div className="details-content-container">
-           {isAuthenticated && (
-          <div className="card-saved" onClick={onSaveClick}>
-            {isSaved ? (
-              <img src="/images/bookmark-solid.svg" alt="bookmark" />
-            ) : (
-              <img src="/images/bookmark-regular.svg" alt="bookmark" />
-            )}
-          </div>
-           )}
+          {isAuthenticated && (
+            <div className="card-saved" onClick={onSaveClick}>
+              {isSaved ? (
+                <img src="/images/bookmark-solid.svg" alt="bookmark" />
+              ) : (
+                <img src="/images/bookmark-regular.svg" alt="bookmark" />
+              )}
+            </div>
+          )}
           <div className="card-location">
             <p>{campaign.location}</p>
           </div>
@@ -143,7 +147,11 @@ export default function CampaignDetails() {
                 </p>
                 <div className="card-action-btn">
                   <button
-                    className={`join-button ${joinedUsers[campaignId]?.includes(userId) ? 'disabled' : ''}`}
+                    className={`join-button ${
+                      joinedUsers[campaignId]?.includes(userId)
+                        ? "disabled"
+                        : ""
+                    }`}
                     onClick={onJoinClick}
                     disabled={joinedUsers[campaignId]?.includes(userId)}
                   >

@@ -1,32 +1,43 @@
-import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import { useCampaignContext } from "../../contexts/CampaignContext";
+import { useState, useEffect, useContext } from "react";
 import CampaignCard from "../ActiveCampaigns/CampaignCard/CampaignCard";
 import { AuthContext } from "../../contexts/AuthContext";
+import { campaignServiceFactory } from "../../services/campaignService";
 import MyProfile from "../MyProfile/MyProfile";
 
 export default function MyCampaigns() {
-  const { campaigns } = useCampaignContext();
   const { userId } = useContext(AuthContext);
-   const [selectedTab, setSelectedTab] = useState("MyCampaigns");
+  const [campaigns, setCampaigns] = useState([]);
+  const campaignService = campaignServiceFactory();
+  const [selectedTab, setSelectedTab] = useState("MyCampaigns");
+
+  useEffect(() => {
+    campaignService
+      .getAll()
+      .then((result) => setCampaigns(result))
+      .catch((error) => console.log(error));
+  }, []);
 
   const ownerCampaigns = campaigns.filter(
     (campaign) => campaign._ownerId === userId
   );
 
-    const savedCampaignsObject = JSON.parse(localStorage.getItem("savedCampaigns")) || {};
+  const savedCampaignsObject =
+    JSON.parse(localStorage.getItem("savedCampaigns")) || {};
   const savedCampaigns = Object.keys(savedCampaignsObject).filter(
     (campaignId) => savedCampaignsObject[campaignId] === true
   );
 
-    const renderCampaigns = () => {
+  const renderCampaigns = () => {
     if (selectedTab === "MyCampaigns") {
       return (
-        <div className="cards"   style={{
-      opacity: 0,
-      animation: "sliderReveal 1s ease forwards",
-      animationDelay: "0.6s"
-    }}>
+        <div
+          className="cards"
+          style={{
+            opacity: 0,
+            animation: "sliderReveal 1s ease forwards",
+            animationDelay: "0.6s",
+          }}
+        >
           {ownerCampaigns.length > 0 ? (
             ownerCampaigns.map((x) => <CampaignCard key={x._id} {...x} />)
           ) : (
@@ -42,15 +53,19 @@ export default function MyCampaigns() {
       );
     } else if (selectedTab === "SavedCampaigns") {
       return (
-           <div className="cards"   style={{
-      opacity: 0,
-      animation: "sliderReveal 1s ease forwards",
-      animationDelay: "0.6s"
-    }}>
+        <div
+          className="cards"
+          style={{
+            opacity: 0,
+            animation: "sliderReveal 1s ease forwards",
+            animationDelay: "0.6s",
+          }}
+        >
           {savedCampaigns.length > 0 ? (
             savedCampaigns.map((x) => {
-                  const campaign = campaigns.find((c) => c._id === x);
-                  return <CampaignCard key={x} {...campaign} />})
+              const campaign = campaigns.find((c) => c._id === x);
+              return <CampaignCard key={x} {...campaign} />;
+            })
           ) : (
             <div className="no-campaigns">
               <p>
@@ -81,16 +96,22 @@ export default function MyCampaigns() {
           className={`title ${selectedTab === "MyCampaigns" ? "active" : ""}`}
           onClick={() => setSelectedTab("MyCampaigns")}
         >
-          <h2 className={selectedTab === "MyCampaigns" ? "bold-text" : ""}>My Campaigns</h2>
+          <h2 className={selectedTab === "MyCampaigns" ? "bold-text" : ""}>
+            My Campaigns
+          </h2>
         </div>
         <div className="title">
           <h2>|</h2>
         </div>
         <div
-          className={`title ${selectedTab === "SavedCampaigns" ? "active" : ""}`}
+          className={`title ${
+            selectedTab === "SavedCampaigns" ? "active" : ""
+          }`}
           onClick={() => setSelectedTab("SavedCampaigns")}
         >
-          <h2 className={selectedTab === "SavedCampaigns" ? "bold-text" : ""}>Saved Campaigns</h2>
+          <h2 className={selectedTab === "SavedCampaigns" ? "bold-text" : ""}>
+            Saved Campaigns
+          </h2>
         </div>
       </div>
       <div className="divider-container">

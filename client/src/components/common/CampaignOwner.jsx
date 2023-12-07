@@ -1,14 +1,15 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { Navigate, Outlet, useParams } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useCampaignContext } from "../../contexts/CampaignContext";
 
 export default function CampaignOwner({ children, isOwner }) {
+  const [campaigns, setCampaigns] = useState([]);
   const { campaignId } = useParams();
-  const { getCampaign } = useCampaignContext();
   const { userId } = useContext(AuthContext);
 
-  const currentCampaign = getCampaign(campaignId);
+  const currentCampaign = campaigns.find(
+    (campaign) => campaign._id === campaignId
+  );
 
   if (!isOwner && currentCampaign && currentCampaign._ownerId !== userId) {
     return <Navigate to={`/activeCampaigns/${campaignId}`} replace />;

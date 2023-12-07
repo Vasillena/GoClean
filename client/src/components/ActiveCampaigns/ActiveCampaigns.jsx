@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useCampaignContext } from "../../contexts/CampaignContext";
+// import { useCampaignContext } from "../../contexts/CampaignContext";
+import {campaignServiceFactory} from '../../services/campaignService';
 import CampaignCard from "./CampaignCard/CampaignCard";
 
 export default function ActiveCampaigns() {
-  const { campaigns } = useCampaignContext();
+    const [campaigns, setCampaigns] = useState([]);
+      const campaignService = campaignServiceFactory();
+  // const { campaigns } = useCampaignContext();
   const [searchQuery, setSearchQuery] = useState("");
   const [error, setError] = useState(null);
+
+    useEffect(() => {
+    campaignService.getAll()
+    .then(result => setCampaigns(result))
+    .catch(error => console.log(error)
+    );
+  }, []);
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);

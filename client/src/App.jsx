@@ -3,7 +3,6 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
 import { AuthProvider } from "./contexts/AuthContext";
-import CampaignProvider from "./contexts/CampaignContext";
 import {
   IsAuthRouteGuard,
   IsNotAuthRouteGuard,
@@ -30,49 +29,46 @@ import Weather from "./components/Weather/Weather";
 import BackToTop from "./components/BackToTop/BackToTop";
 
 function App() {
-
   return (
     <AuthProvider>
-      <CampaignProvider>
-        <>
+      <>
         <ScrollToTop />
-          <Navigation />
-          <Weather/>
-          <main className="main">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route element={<IsAuthRouteGuard />}>
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-              </Route>
-              <Route path="/activeCampaigns" element={<ActiveCampaigns />} />
+        <Navigation />
+        <Weather />
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route element={<IsAuthRouteGuard />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Route>
+            <Route path="/activeCampaigns" element={<ActiveCampaigns />} />
+            <Route
+              path="/activeCampaigns/:campaignId"
+              element={<CampaignDetails />}
+            />
+            <Route element={<IsNotAuthRouteGuard />}>
+              <Route path="/createCampaign" element={<CreateCampaign />} />
               <Route
-                path="/activeCampaigns/:campaignId"
-                element={<CampaignDetails />}
+                path="/activeCampaigns/:campaignId/editCampaign"
+                element={
+                  <CampaignOwner>
+                    <EditCampaign />
+                  </CampaignOwner>
+                }
               />
-              <Route element={<IsNotAuthRouteGuard />}>
-                <Route path="/createCampaign" element={<CreateCampaign />} />
-                <Route
-                  path="/activeCampaigns/:campaignId/editCampaign"
-                  element={
-                    <CampaignOwner>
-                      <EditCampaign />
-                    </CampaignOwner>
-                  }
-                />
-                <Route path="/myCampaigns" element={<MyCampaigns />} />
-                <Route path="/logout" element={<Logout />} />
-              </Route>
+              <Route path="/myCampaigns" element={<MyCampaigns />} />
+              <Route path="/logout" element={<Logout />} />
+            </Route>
 
-              <Route path="/goGreen" element={<GoGreen />} />
-              <Route path="/thankYou" element={<ThankYou />} />
-               <Route path="*" element={<ErrorPage />} />
-            </Routes>
-          </main>
-          <BackToTop/>
-          <Footer />
-        </>
-      </CampaignProvider>
+            <Route path="/goGreen" element={<GoGreen />} />
+            <Route path="/thankYou" element={<ThankYou />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </main>
+        <BackToTop />
+        <Footer />
+      </>
     </AuthProvider>
   );
 }
