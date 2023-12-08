@@ -1,9 +1,16 @@
+<div align="center">
 # GoClean
 GoClean: Community Awareness for Earth Pollution and Nature Preservation
 
 ## 📖 Introduction
 
 GoClean is a purpose-driven react project aimed at raising community awareness of the critical issues of earth pollution and the urgent need for nature preservation with a mission to empower individuals and foster a sense of responsibility towards the environment. GoClean encourages active participation through community-driven initiatives such as clean-up campaigns, educational events, and collaborative projects. By joining forces, we can make a tangible difference and protect the beauty and balance of our natural world.
+
+## Table of Contents
+[Getting started](#getting-started) •
+[Features](#features) •
+[Structure and Architecture](#structure-and-architecture) •
+[Screenshots](#screenshots)
 
 ## Getting Started
 Clone the repository:
@@ -31,6 +38,134 @@ Run the following command to start the app in development mode:
 npm run dev
 ```
 Open http://localhost:5173 in your browser to view the application.
+
+## 🚀 Features
+
+## Structure and Architecture
+- .DS_Store
+- .gitignore
+- README.md
+- client
+  - .DS_Store
+  - .vite
+    - deps
+      - _metadata.json
+      - chunk-L7APZED3.js
+      - chunk-L7APZED3.js.map
+      - package.json
+      - react-dom_client.js
+      - react-dom_client.js.map
+      - react-router-dom.js
+      - react-router-dom.js.map
+      - react.js
+      - react.js.map
+  - README.md
+  - index.html
+  - package-lock.json
+  - package.json
+  - public
+    - .DS_Store
+    - favicon.png
+    - images
+      - (...)
+  - src
+    - .DS_Store
+    - App.css
+    - App.jsx
+    - components
+      - ActiveCampaigns
+        - ActiveCampaigns.jsx
+        - CampaignCard
+          - CampaignCard.jsx
+      - BackToTop
+        - BackToTop.jsx
+      - CampaignDetails
+        - CampaignDetails.jsx
+      - Contact
+        - Contact.jsx
+      - CreateCampaign
+        - CreateCampaign.jsx
+      - EditCampaign
+        - EditCampaign.jsx
+      - ErrorPage
+        - ErrorPage.jsx
+      - Footer
+        - Footer.jsx
+      - GoGreen
+        - GoGreen.jsx
+      - HeroSection
+        - HeroSection.jsx
+      - Home
+        - Home.jsx
+      - Login
+        - Login.jsx
+      - Logout
+        - Logout.jsx
+      - MyCampaigns
+        - MyCampaigns.jsx
+      - MyProfile
+        - MyProfile.jsx
+      - Navigation
+        - Navigation.jsx
+      - OurPride
+        - OurPride.jsx
+      - Register
+        - Register.jsx
+      - ScrollToTop
+        - ScrollToTop.jsx
+      - ThankYou
+        - ThankYou.jsx
+      - Weather
+        - Weather.jsx
+      - WhoAreWe
+        - WhoAreWe.jsx
+      - common
+        - CampaignOwner.jsx
+        - RouteGuard.jsx
+    - contexts
+      - AuthContext.jsx
+    - hooks
+      - useForm.js
+      - useLocalStorage.js
+      - useService.js
+    - index.css
+    - main.jsx
+    - services
+      - authService.js
+      - campaignService.js
+      - requester.js
+      - weatherService.js
+    - styles
+      - .DS_Store
+      - css
+        - .DS_Store
+        - active-campaigns.css
+        - animations.css
+        - back-to-top.css
+        - campaign-card.css
+        - contact.css
+        - create-campaign.css
+        - error-page.css
+        - go-green.css
+        - layout.css
+        - login-register.css
+        - my-campaign.css
+        - my-profile.css
+        - our-pride.css
+        - reset.css
+        - responsive.css
+        - thank-you.css
+        - typography.css
+        - weather-card.css
+        - who-are-we.css
+    - utils
+      - validateInputs.js
+  - vite.config.js
+- server
+  - .DS_Store
+  - data
+    - users.json
+  - server.js
 
 ## 📷 Screenshots
 
@@ -60,3 +195,5 @@ Open http://localhost:5173 in your browser to view the application.
 ![Screenshot 17](https://github.com/Vasillena/GoClean/assets/114015792/c8d735e8-063a-47d0-bf9b-bef631d9e360)
 ![Screenshot 18](https://github.com/Vasillena/GoClean/assets/114015792/86f0c34a-972e-40cf-9d1c-539babaa05e4)
 ![Screenshot 19](https://github.com/Vasillena/GoClean/assets/114015792/112eaec6-601e-424f-827d-fe1cfb46595f)
+
+</div>
