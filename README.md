@@ -1,18 +1,20 @@
 <div align="center">
-# GoClean
-GoClean: Community Awareness for Earth Pollution and Nature Preservation
+<h1 align="center">GoClean</h1>
+  🌳🌍🌳
+  <br/>
+Community Awareness for Earth Pollution and Nature Preservation
 
-## 📖 Introduction
+## ⭐️  Introduction
 
 GoClean is a purpose-driven react project aimed at raising community awareness of the critical issues of earth pollution and the urgent need for nature preservation with a mission to empower individuals and foster a sense of responsibility towards the environment. GoClean encourages active participation through community-driven initiatives such as clean-up campaigns, educational events, and collaborative projects. By joining forces, we can make a tangible difference and protect the beauty and balance of our natural world.
 
-## Table of Contents
+## 📜 Table of Contents
 [Getting started](#getting-started) •
 [Features](#features) •
 [Structure and Architecture](#structure-and-architecture) •
 [Screenshots](#screenshots)
 
-## Getting Started
+## 💡 Getting Started
 Clone the repository:
 ```
 git clone https://github.com/Vasillena/GoClean
@@ -39,10 +41,11 @@ npm run dev
 ```
 Open http://localhost:5173 in your browser to view the application.
 
-## 🚀 Features
+## 🧸 Features
 
-## Structure and Architecture
+## 🏛️ Structure and Architecture
 </div>
+
 - [**.DS_Store**](./.DS_Store)
 - [**.gitignore**](./.gitignore)
 - [**README.md**](./README.md)
