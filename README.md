@@ -19,7 +19,7 @@ GoClean is a purpose-driven react project aimed at raising community awareness o
 ![Screenshot 1](https://github.com/Vasillena/GoClean/assets/114015792/8a817d74-b3e2-4be5-b169-092bab6140f6)
 ![Screenshot 2](https://github.com/Vasillena/GoClean/assets/114015792/f3e2cca3-2000-47db-aeb1-7c00aaff8fe8)
 ![Screenshot 3](https://github.com/Vasillena/GoClean/assets/114015792/00b981f7-f66b-4157-be93-9c4aa6e6e605)
-![Screenshot 4](https://github.com/Vasillena/GoClean/assets/114015792/010ee000-eee9-4985-9b11-605240c991df)
+![Screenshot 4](https://github.com/Vasillena/GoClean/assets/114015792/0a8803ad-d203-4c7d-bb87-e600f779069e)
 ![Screenshot 5](https://github.com/Vasillena/GoClean/assets/114015792/e7da43f1-6e0d-4210-81c1-41601c7316ff)
 ![Screenshot 6](https://github.com/Vasillena/GoClean/assets/114015792/1f3dfde1-61f4-46ba-9003-328e13ea6774)
 ![Screenshot 7](https://github.com/Vasillena/GoClean/assets/114015792/fc5a6794-2ffa-496c-8396-30ee3f7d6f5e)
