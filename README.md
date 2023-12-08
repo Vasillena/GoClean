@@ -124,6 +124,7 @@ Open http://localhost:5173 in your browser to view the application.
   - [server.js](./server/server.js)
 
 <div align="center">
+  
 ## 📷 Screenshots
 
 -----Mobile Version-----
