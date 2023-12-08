@@ -43,6 +43,12 @@ Open http://localhost:5173 in your browser to view the application.
 
 ## 🧸 Features
 
+DEMO USERS
+
+peter@abv.bg pass: 123456;
+<br/>
+george@abv.bg pass: 123456;
+
 ## 🏛️ Structure and Architecture
 </div>
 
