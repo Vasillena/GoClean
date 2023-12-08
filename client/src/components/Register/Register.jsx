@@ -2,65 +2,85 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { useForm } from "../../hooks/useForm";
 import { AuthContext } from "../../contexts/AuthContext";
+import { validateInputs } from "../../utils/validateInputs";
 
-const RegisterFormKeys = {
-  Name: "username",
-  Email: "email",
-  Password: "password",
-  RepeatPassword: "repeatPassword",
-};
+// const RegisterFormKeys = {
+//   Name: "username",
+//   Email: "email",
+//   Password: "password",
+//   RepeatPassword: "repeatPassword",
+// };
 
 export default function Register() {
   const { onRegisterSubmit } = useContext(AuthContext);
-  // const { onRegisterSubmit } = useAuthContext;
-  const { values, changeHandler, onSubmit } = useForm(
+  const { values, changeHandler, onSubmit, errors } = useForm(
     {
-      [RegisterFormKeys.Name]: "",
-      [RegisterFormKeys.Email]: "",
-      [RegisterFormKeys.Password]: "",
-      [RegisterFormKeys.RepeatPassword]: "",
+      name: "",
+      email: "",
+      password: "",
+      repeatPassword: "",
+      // [RegisterFormKeys.Name]: "",
+      // [RegisterFormKeys.Email]: "",
+      // [RegisterFormKeys.Password]: "",
+      // [RegisterFormKeys.RepeatPassword]: "",
     },
-    onRegisterSubmit
+    onRegisterSubmit,
+    validateInputs
   );
 
   return (
     <section className="register-section">
       <div className="forms">
         <div className="signup">
-          <form method="POST" id="signup" onSubmit={onSubmit}>
+          <form
+            method="POST"
+            id="signup"
+            onSubmit={(e) => onSubmit(e, validateInputs)}
+          >
             <h3>Sign up</h3>
-                  <input
+            <input
               type="text"
-              name={RegisterFormKeys.Name}
+              name="name"
+              // name={RegisterFormKeys.Name}
               placeholder="Name"
-              value={values[RegisterFormKeys.Name]}
+              // value={values[RegisterFormKeys.Name]}
+              value={values.name}
               onChange={changeHandler}
               required
             />
             <input
               type="email"
-              name={RegisterFormKeys.Email}
+              name="email"
+              // name={RegisterFormKeys.Email}
               placeholder="Email"
-              value={values[RegisterFormKeys.Email]}
+              // value={values[RegisterFormKeys.Email]}
+              value={values.email}
               onChange={changeHandler}
               required
             />
             <input
               type="password"
-              name={RegisterFormKeys.Password}
+              name="password"
+              // name={RegisterFormKeys.Password}
               placeholder="Password"
-              value={values[RegisterFormKeys.Password]}
+              // value={values[RegisterFormKeys.Password]}
+              value={values.password}
               onChange={changeHandler}
               required
             />
             <input
               type="password"
-              name={RegisterFormKeys.RepeatPassword}
+              name="repeatPassword"
+              // name={RegisterFormKeys.RepeatPassword}
               placeholder="Repeat Password"
-              value={values[RegisterFormKeys.RepeatPassword]}
+              // value={values[RegisterFormKeys.RepeatPassword]}
+              value={values.repeatPassword}
               onChange={changeHandler}
               required
             />
+            {errors.passwordMatch && (
+              <p className="form-error">{errors.passwordMatch}</p>
+            )}
             <input type="submit" className="submit" defaultValue="Sign up" />
             <p className="no-account">
               Already have an account?

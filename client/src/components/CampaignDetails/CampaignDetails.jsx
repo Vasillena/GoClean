@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useService } from "../../hooks/useService";
 import { campaignServiceFactory } from "../../services/campaignService";
 import { AuthContext } from "../../contexts/AuthContext";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export default function CampaignDetails() {
   const { userId, isAuthenticated } = useContext(AuthContext);
@@ -12,12 +13,17 @@ export default function CampaignDetails() {
   const campaignService = useService(campaignServiceFactory);
   const navigate = useNavigate();
   const [isSaved, setIsSaved] = useState(false);
-  const [savedCampaigns, setSavedCampaigns] = useState(
-    JSON.parse(localStorage.getItem("savedCampaigns")) || {}
+  // const [savedCampaigns, setSavedCampaigns] = useState(
+  //   JSON.parse(localStorage.getItem("savedCampaigns")) || {}
+  // );
+  const [savedCampaigns, setSavedCampaigns] = useLocalStorage(
+    "savedCampaigns",
+    {}
   );
-  const [joinedUsers, setJoinedUsers] = useState(
-    JSON.parse(localStorage.getItem("joinedUsers")) || {}
-  );
+  // const [joinedUsers, setJoinedUsers] = useState(
+  //   JSON.parse(localStorage.getItem("joinedUsers")) || {}
+  // );
+  const [joinedUsers, setJoinedUsers] = useLocalStorage("joinedUsers", {});
 
   useEffect(() => {
     campaignService
