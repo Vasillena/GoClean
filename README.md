@@ -42,8 +42,7 @@ Open http://localhost:5173 in your browser to view the application.
 ## 🚀 Features
 
 ## Structure and Architecture
-## Structure and Architecture
-
+</div>
 - [**.DS_Store**](./.DS_Store)
 - [**.gitignore**](./.gitignore)
 - [**README.md**](./README.md)
@@ -121,7 +120,7 @@ Open http://localhost:5173 in your browser to view the application.
     - [users.json](./server/data/users.json)
   - [server.js](./server/server.js)
 
-
+<div align="center">
 ## 📷 Screenshots
 
 -----Mobile Version-----
