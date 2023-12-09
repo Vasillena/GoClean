@@ -6,37 +6,57 @@ export const campaignServiceFactory = (token) => {
   const request = requestFactory(token);
 
   const getAll = async () => {
-    const result = await request.get(baseUrl);
-    const campaigns = Object.values(result);
+    try {
+      const result = await request.get(baseUrl);
+      const campaigns = Object.values(result);
 
-    return campaigns;
+      return campaigns;
+    } catch (error) {
+      console.error("Error getting campaigns:", error);
+      throw error;
+    }
   };
 
   const getOne = async (campaignId) => {
-    const result = await request.get(`${baseUrl}/${campaignId}`);
+    try {
+      const result = await request.get(`${baseUrl}/${campaignId}`);
 
-    return result;
+      return result;
+    } catch (error) {
+      console.error("Error getting campaign:", error);
+      throw error;
+    }
   };
 
   const create = async (campaignData) => {
-    const result = await request.post(baseUrl, campaignData);
+    try {
+      const result = await request.post(baseUrl, campaignData);
 
-    return result;
+      return result;
+    } catch (error) {
+      console.error("Error creating campaign:", error);
+      throw error;
+    }
   };
-
-  // const edit = (campaignId, data) =>
-  //   request.put(`${baseUrl}/${campaignId}`, data);
-
-  // const deleteCampaign = (campaignId) =>
-  //   request.delete(`${baseUrl}/${campaignId}`);
 
   const edit = async (campaignId, data) => {
-    const result = await request.put(`${baseUrl}/${campaignId}`, data);
-    return result;
+    try {
+      const result = await request.put(`${baseUrl}/${campaignId}`, data);
+      return result;
+    } catch (error) {
+      console.error("Error editing campaign:", error);
+      throw error;
+    }
   };
 
-  const deleteCampaign = async (campaignId) =>
-    request.delete(`${baseUrl}/${campaignId}`);
+  const deleteCampaign = async (campaignId) => {
+    try {
+      request.delete(`${baseUrl}/${campaignId}`);
+    } catch (error) {
+      console.error("Error editing campaign:", error);
+      throw error;
+    }
+  };
 
   return {
     getAll,

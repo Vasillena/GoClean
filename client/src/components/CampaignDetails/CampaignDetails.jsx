@@ -146,11 +146,13 @@ export default function CampaignDetails() {
                 </div>
               </>
             )}
+            {isAuthenticated && (
+              <p className="counter">
+                Total joined: {joinedUsers[campaignId]?.length || 0}
+              </p>
+            )}
             {!isOwner && isAuthenticated && (
               <>
-                <p className="counter">
-                  Total joined: {joinedUsers[campaignId]?.length || 0}
-                </p>
                 <div className="card-action-btn">
                   <button
                     className={`join-button ${
