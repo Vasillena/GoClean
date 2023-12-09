@@ -1,12 +1,136 @@
-!IN THE MAKINNG!
+<div align="center">
+<h1 align="center">GoClean</h1>
+  🌳🌍🌳
+  <br/>
+Community Awareness for Earth Pollution and Nature Preservation
 
-# GoClean
-GoClean: Community Awareness for Earth Pollution and Nature Preservation
-
-## 📖 Description
+## ⭐️  Introduction
 
 GoClean is a purpose-driven react project aimed at raising community awareness of the critical issues of earth pollution and the urgent need for nature preservation with a mission to empower individuals and foster a sense of responsibility towards the environment. GoClean encourages active participation through community-driven initiatives such as clean-up campaigns, educational events, and collaborative projects. By joining forces, we can make a tangible difference and protect the beauty and balance of our natural world.
 
+## 📜 Table of Contents
+[Getting started](#getting-started) •
+[Features](#features) •
+[Structure and Architecture](#structure-and-architecture) •
+[Screenshots](#screenshots)
+
+## 💡 Getting Started
+Clone the repository:
+```
+git clone https://github.com/Vasillena/GoClean
+```
+Navigate to the server folder:
+```
+cd server
+```
+Run the following command to start the back-end server:
+```
+node server.js
+```
+Open new terminal and navigate to the client folder:
+```
+cd client
+```
+Run the following command to install all required packages and dependencies:
+```
+npm install
+```
+Run the following command to start the app in development mode:
+```
+npm run dev
+```
+Open http://localhost:5173 in your browser to view the application.
+
+## 🧸 Features
+
+DEMO USERS
+
+peter@abv.bg pass: 123456;
+<br/>
+george@abv.bg pass: 123456;
+
+## 🏛️ Structure and Architecture
+</div>
+
+- [**.DS_Store**](./.DS_Store)
+- [**.gitignore**](./.gitignore)
+- [**README.md**](./README.md)
+- **client/**
+  - [.DS_Store](./client/.DS_Store)
+  - **.vite/**
+    - **deps/**
+      - [_metadata.json](./client/.vite/deps/_metadata.json)
+      - [chunk-L7APZED3.js](./client/.vite/deps/chunk-L7APZED3.js)
+      - [chunk-L7APZED3.js.map](./client/.vite/deps/chunk-L7APZED3.js.map)
+      - [package.json](./client/.vite/deps/package.json)
+      - [react-dom_client.js](./client/.vite/deps/react-dom_client.js)
+      - [react-dom_client.js.map](./client/.vite/deps/react-dom_client.js.map)
+      - [react-router-dom.js](./client/.vite/deps/react-router-dom.js)
+      - [react-router-dom.js.map](./client/.vite/deps/react-router-dom.js.map)
+      - [react.js](./client/.vite/deps/react.js)
+      - [react.js.map](./client/.vite/deps/react.js.map)
+  - [README.md](./client/README.md)
+  - [index.html](./client/index.html)
+  - [package-lock.json](./client/package-lock.json)
+  - [package.json](./client/package.json)
+  - **public/**
+    - [.DS_Store](./client/public/.DS_Store)
+    - [favicon.png](./client/public/favicon.png)
+    - **images/**
+      - (...)
+  - **src/**
+    - [.DS_Store](./client/src/.DS_Store)
+    - [App.css](./client/src/App.css)
+    - [App.jsx](./client/src/App.jsx)
+    - **components/**
+      - **ActiveCampaigns/**
+        - [ActiveCampaigns.jsx](./client/src/components/ActiveCampaigns/ActiveCampaigns.jsx)
+        - **CampaignCard/**
+          - [CampaignCard.jsx](./client/src/components/ActiveCampaigns/CampaignCard/CampaignCard.jsx)
+      - **BackToTop/**
+        - [BackToTop.jsx](./client/src/components/BackToTop/BackToTop.jsx)
+      - **CampaignDetails/**
+        - [CampaignDetails.jsx](./client/src/components/CampaignDetails/CampaignDetails.jsx)
+      - **Contact/**
+        - [Contact.jsx](./client/src/components/Contact/Contact.jsx)
+      - **CreateCampaign/**
+        - [CreateCampaign.jsx](./client/src/components/CreateCampaign/CreateCampaign.jsx)
+      - **EditCampaign/**
+        - [EditCampaign.jsx](./client/src/components/EditCampaign/EditCampaign.jsx)
+      - (...)
+    - **contexts/**
+      - [AuthContext.jsx](./client/src/contexts/AuthContext.jsx)
+    - **hooks/**
+      - [useForm.js](./client/src/hooks/useForm.js)
+      - [useLocalStorage.js](./client/src/hooks/useLocalStorage.js)
+      - [useService.js](./client/src/hooks/useService.js)
+    - [index.css](./client/src/index.css)
+    - [main.jsx](./client/src/main.jsx)
+    - **services/**
+      - [authService.js](./client/src/services/authService.js)
+      - [campaignService.js](./client/src/services/campaignService.js)
+      - [requester.js](./client/src/services/requester.js)
+      - [weatherService.js](./client/src/services/weatherService.js)
+    - **styles/**
+      - [.DS_Store](./client/src/styles/.DS_Store)
+      - **css/**
+        - [.DS_Store](./client/src/styles/css/.DS_Store)
+        - [active-campaigns.css](./client/src/styles/css/active-campaigns.css)
+        - (...)
+      - [reset.css](./client/src/styles/reset.css)
+      - [responsive.css](./client/src/styles/responsive.css)
+      - (...)
+    - **utils/**
+      - [validateInputs.js](./client/src/utils/validateInputs.js)
+  - [vite.config.js](./client/vite.config.js)
+- **server/**
+  - [.DS_Store](./server/.DS_Store)
+  - **data/**
+    - [users.json](./server/data/users.json)
+  - [server.js](./server/server.js)
+
+<div align="center">
+  
 ## 📷 Screenshots
 
 -----Mobile Version-----
@@ -35,3 +159,5 @@ GoClean is a purpose-driven react project aimed at raising community awareness o
 ![Screenshot 17](https://github.com/Vasillena/GoClean/assets/114015792/c8d735e8-063a-47d0-bf9b-bef631d9e360)
 ![Screenshot 18](https://github.com/Vasillena/GoClean/assets/114015792/86f0c34a-972e-40cf-9d1c-539babaa05e4)
 ![Screenshot 19](https://github.com/Vasillena/GoClean/assets/114015792/112eaec6-601e-424f-827d-fe1cfb46595f)
+
+</div>
