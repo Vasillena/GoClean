@@ -57,7 +57,8 @@ Simple user profile
 <br/>
 Access "My Campaigns" and "Saved Campaigns" sections
 <br/>
-Use external API for accurate weather updates\<br/>
+Use external API for accurate weather updates
+<br/>
 
 
 **User Access Levels**
@@ -80,10 +81,12 @@ Bookmark campaigns for later reference
 <br/>
 
 Registered User (Campaign Owner):
+
 <br/>
 Edit and remove personal campaigns
 <br/>
 View "My Campaigns" section
+<br/>
 
 **Demo Users**
 
