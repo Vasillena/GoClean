@@ -38,11 +38,11 @@
   margin: 0 auto;
 }
 
-.card-container {
+/* .card-container {
   opacity: 0;
   animation: sliderReveal 1s ease forwards;
   animation-delay: 0.6s;
-}
+} */
 
 .my-campaigns .card-date,
 .my-campaigns .card-time,

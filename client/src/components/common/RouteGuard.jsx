@@ -18,6 +18,5 @@ export function IsAuthRouteGuard({ children }) {
   if (isAuthenticated) {
     return <Navigate to="/" />;
   }
-
   return children ? children : <Outlet />;
 }

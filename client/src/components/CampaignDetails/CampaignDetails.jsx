@@ -13,16 +13,10 @@ export default function CampaignDetails() {
   const campaignService = useService(campaignServiceFactory);
   const navigate = useNavigate();
   const [isSaved, setIsSaved] = useState(false);
-  // const [savedCampaigns, setSavedCampaigns] = useState(
-  //   JSON.parse(localStorage.getItem("savedCampaigns")) || {}
-  // );
   const [savedCampaigns, setSavedCampaigns] = useLocalStorage(
     "savedCampaigns",
     {}
   );
-  // const [joinedUsers, setJoinedUsers] = useState(
-  //   JSON.parse(localStorage.getItem("joinedUsers")) || {}
-  // );
   const [joinedUsers, setJoinedUsers] = useLocalStorage("joinedUsers", {});
 
   useEffect(() => {
@@ -64,10 +58,6 @@ export default function CampaignDetails() {
       }));
     }
   };
-
-  useEffect(() => {
-    localStorage.setItem("joinedUsers", JSON.stringify(joinedUsers));
-  }, [joinedUsers]);
 
   useEffect(() => {
     localStorage.setItem("joinedUsers", JSON.stringify(joinedUsers));

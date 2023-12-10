@@ -4,13 +4,6 @@ import { useForm } from "../../hooks/useForm";
 import { AuthContext } from "../../contexts/AuthContext";
 import { validateInputs } from "../../utils/validateInputs";
 
-// const RegisterFormKeys = {
-//   Name: "username",
-//   Email: "email",
-//   Password: "password",
-//   RepeatPassword: "repeatPassword",
-// };
-
 export default function Register() {
   const { onRegisterSubmit } = useContext(AuthContext);
   const { values, changeHandler, onSubmit, errors } = useForm(
@@ -19,10 +12,6 @@ export default function Register() {
       email: "",
       password: "",
       repeatPassword: "",
-      // [RegisterFormKeys.Name]: "",
-      // [RegisterFormKeys.Email]: "",
-      // [RegisterFormKeys.Password]: "",
-      // [RegisterFormKeys.RepeatPassword]: "",
     },
     onRegisterSubmit,
     validateInputs
@@ -41,9 +30,7 @@ export default function Register() {
             <input
               type="text"
               name="name"
-              // name={RegisterFormKeys.Name}
               placeholder="Name"
-              // value={values[RegisterFormKeys.Name]}
               value={values.name}
               onChange={changeHandler}
               required
@@ -51,9 +38,7 @@ export default function Register() {
             <input
               type="email"
               name="email"
-              // name={RegisterFormKeys.Email}
               placeholder="Email"
-              // value={values[RegisterFormKeys.Email]}
               value={values.email}
               onChange={changeHandler}
               required
@@ -61,9 +46,7 @@ export default function Register() {
             <input
               type="password"
               name="password"
-              // name={RegisterFormKeys.Password}
               placeholder="Password"
-              // value={values[RegisterFormKeys.Password]}
               value={values.password}
               onChange={changeHandler}
               required
@@ -71,9 +54,7 @@ export default function Register() {
             <input
               type="password"
               name="repeatPassword"
-              // name={RegisterFormKeys.RepeatPassword}
               placeholder="Repeat Password"
-              // value={values[RegisterFormKeys.RepeatPassword]}
               value={values.repeatPassword}
               onChange={changeHandler}
               required
