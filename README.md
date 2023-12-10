@@ -43,7 +43,49 @@ Open http://localhost:5173 in your browser to view the application.
 
 ## 🧸 Features
 
-DEMO USERS
+**Key Features**
+
+Launch and publish cleaning campaigns
+<br/>
+Explore campaigns based on location
+<br/>
+Join campaigns of interest
+<br/>
+Bookmark preferred campaigns for future engagement
+<br/>
+Simple user profile
+<br/>
+Access "My Campaigns" and "Saved Campaigns" sections
+<br/>
+Use external API for accurate weather updates\<br/>
+
+
+**User Access Levels**
+
+Guest User:
+
+Browse all static pages
+<br/>
+Explore available campaigns and access detailed information
+<br/>
+Use search functionality
+<br/>
+Check real-time weather reports
+
+Registered User (Non-Owner):
+
+Join ongoing campaigns
+<br/>
+Bookmark campaigns for later reference
+<br/>
+
+Registered User (Campaign Owner):
+<br/>
+Edit and remove personal campaigns
+<br/>
+View "My Campaigns" section
+
+**Demo Users**
 
 peter@abv.bg pass: 123456;
 <br/>
