@@ -8,7 +8,7 @@ export default function Register() {
   const { onRegisterSubmit } = useContext(AuthContext);
   const { values, changeHandler, onSubmit, errors } = useForm(
     {
-      name: "",
+      username: "",
       email: "",
       password: "",
       repeatPassword: "",
@@ -29,9 +29,9 @@ export default function Register() {
             <h3>Sign up</h3>
             <input
               type="text"
-              name="name"
+              name="username"
               placeholder="Name"
-              value={values.name}
+              value={values.username}
               onChange={changeHandler}
               required
             />
