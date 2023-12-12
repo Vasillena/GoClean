@@ -10,7 +10,7 @@ GoClean is a purpose-driven react project aimed at raising community awareness o
 
 ## 📜 Table of Contents
 [Getting started](#💡-getting-started) •
-[Features](#🧸-features) •
+[Features](##-🧸-Features) •
 [Structure and Architecture](#🏛️-structure-and-architecture) •
 [Screenshots](#📷-screenshots)
 
