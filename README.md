@@ -9,10 +9,10 @@ Community Awareness for Earth Pollution and Nature Preservation
 GoClean is a purpose-driven react project aimed at raising community awareness of the critical issues of earth pollution and the urgent need for nature preservation with a mission to empower individuals and foster a sense of responsibility towards the environment. GoClean encourages active participation through community-driven initiatives such as clean-up campaigns, educational events, and collaborative projects. By joining forces, we can make a tangible difference and protect the beauty and balance of our natural world.
 
 ## 📜 Table of Contents
-[Getting started](#💡-getting-started) •
+[Getting started](##-💡-Getting-Started) •
 [Features](##-🧸-Features) •
-[Structure and Architecture](#🏛️-structure-and-architecture) •
-[Screenshots](#📷-screenshots)
+[Structure and Architecture](##-🏛️-Structure-and-Architecture) •
+[Screenshots](##-📷-Screenshots)
 
 ## 💡 Getting Started
 Clone the repository:
