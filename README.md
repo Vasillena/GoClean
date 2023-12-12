@@ -10,9 +10,9 @@ GoClean is a purpose-driven react project aimed at raising community awareness o
 
 ## 📜 Table of Contents
 [Getting started](#getting-started) •
-[Features](#features-🧸) •
-[Structure and Architecture](##-🏛️-Structure-and-Architecture) •
-[Screenshots](##-📷-Screenshots)
+[Features](#features) •
+[Structure and Architecture](#structure-and-architecture) •
+[Screenshots](#screenshots)
 
 ## 💡 Getting Started
 Clone the repository:
@@ -41,7 +41,7 @@ npm run dev
 ```
 Open http://localhost:5173 in your browser to view the application.
 
-## Features 🧸
+## 🧸 Features
 
 **Key Features**
 
